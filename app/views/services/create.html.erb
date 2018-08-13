@@ -1,2 +1,4 @@
-<h1>Services#create</h1>
-<p>Find me in app/views/services/create.html.erb</p>
+
+<% if policy(Service).create? %>
+  <%= link_to "New service", new_service_path %>
+<% end %>

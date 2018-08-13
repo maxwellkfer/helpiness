@@ -19,4 +19,5 @@ class ServicesController < ApplicationController
 
   def destroy
   end
+  authorize @service
 end
