@@ -1,4 +1,7 @@
 
+
+
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -9,13 +12,14 @@
       <br>
       <br>
       <br>
-      <%= image_tag "borat.png", width: 250 %>
+      <%= image_tag "borat.png", width: 300 %>
     </div>
 
     <div class="col-xs-12 col-sm-8">
 
         <div id="example-form">
            <div id="wizard">
+
           <h3>Name</h3>
             <section>
               <div class="legend">
@@ -25,10 +29,15 @@
               <br>
               <br>
 
-              <h2>Hello, nice to meet you !</h2>
+
+
+              <h3>Hello, great success to meet you !</h3>
+
               <br>
+                <h4>What is your name ?</h4>
+
+                <br>
               <br>
-                <h4>My name is Helpster and you ?</h4>
 
               <%= f.input :first_name, required: true, label: ""  %>
           </section>
@@ -38,6 +47,19 @@
               <div class="legend">
                 <legend>Account Information</legend>
               </div>
+
+              <br>
+              <br>
+
+
+
+              <br>
+
+              <br>
+                <h4>What university are you in ?</h4>
+
+                <br>
+              <br>
 
               <%= f.input :university, required: true, label: "What university are you in ?" %>
             </section>
@@ -97,6 +119,8 @@
               </div>
               <%= f.input :password_confirmation, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: "What is your password again ?" %>
             </section>
+
+
 
   </div>
   </div>
