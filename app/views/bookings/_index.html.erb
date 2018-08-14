@@ -3,7 +3,7 @@
   <div class="cards">
     <div class="row half-left">
       <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= link_to service_path(booking.service) do %>
+        <%= link_to services_path(booking.service) do %>
         <div class="service-card">
           <%= cl_image_tag(booking.service.photo_url, width: 200, height: 150, crop: :fill, class: "card-img") %>
           truncate_words(10) %></div>

@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def dashboard
+    skip_authorization
+    if user_signed_in?
+      @services = current_user.services
+      @bookings = current_user.bookings
+    end
+  end
+
   def index
   end
 
@@ -19,4 +27,5 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
 end
