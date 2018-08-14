@@ -1,17 +1,99 @@
-<h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+  <div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag "helpster", width: 250 %>
+    </div>
+
+    <div class="col-xs-12 col-sm-8">
+
+        <div id="example-form">
+           <div id="wizard">
+          <h3>Name</h3>
+            <section>
+              <legend>Account Information</legend>
+
+              <%= f.input :first_name, required: true, autofocus: true, label: "First, let's get to know each other. What's your name"  %>
+          </section>
+
+          <h3>University</h3>
+            <section>
+              <legend>University Information</legend>
+
+              <%= f.input :university, required: true, label: "What university are you in ?" %>
+            </section>
+
+          <h3>Field</h3>
+            <section>
+              <legend>Field Information</legend>
+              <%= f.input :field, required: true, label: "What do you study ?" %>
+            </section>
+
+          <h3>Teaching</h3>
+            <section>
+              <legend>Teaching Information</legend>
+              <%= f.input :can_teach, required: true, label: "Do you want to teach X ?" %>
+            </section>
+
+          <h3>Hobbies</h3>
+            <section>
+              <legend>Hobbie Information</legend>
+              <%= f.input :hobbies, required: true, label: "What are your hobbies ?" %>
+            </section>
+
+          <h3>Help</h3>
+            <section>
+              <legend>Help Information</legend>
+              <%= f.input :can_help, required: true, label: "What are your hobbies ?" %>
+            </section>
+
+          <h3>Email</h3>
+            <section>
+              <legend>Hobbie Information</legend>
+              <%= f.input :email, required: true, label: "What is your email ?" %>
+            </section>
+
+          <h3>Password</h3>
+            <section>
+              <legend>Password</legend>
+              <%= f.input :email, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: "What is your email ?" %>
+            </section>
+
+          <h3>Password confirmation</h3>
+            <section>
+              <legend>Password confirmation</legend>
+              <%= f.input :email, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: "What is your email again ?" %>
+            </section>
+
+  </div>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
+<% end %>
+
+</div>
+</div>
+</div>
+
+<%= content_for :body_js do %>
+  <script>
+    var gevent;
+    $("#wizard").steps({
+      headerTag: "h3",
+      bodyTag: "section",
+      transitionEffect: "slideLeft",
+      onFinishing: function (event, currentIndex) {
+        $("#example-form").submit();
+        return true;
+      }
+    });
+  </script>
 <% end %>
 
 <%= render "devise/shared/links" %>
