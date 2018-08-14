@@ -48,6 +48,6 @@ class ServicesController < ApplicationController
   def service_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:service).permit(:name,:helpies, :rating, :user_id, :category_id)
+    params.require(:service).permit(:name,:helpies, :description, :photo, :user_id, :category_id)
   end
 end
