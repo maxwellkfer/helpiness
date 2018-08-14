@@ -1,2 +1,190 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag "helpster", width: 250 %>
+    </div>
+
+    <div class="col-xs-12 col-sm-8">
+
+
+      <section>
+        <div class="wizard">
+            <h1>Jquery Steps by mmm</h1>
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                        <h3>Step one</h3>
+                        <p>first step</p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-primary next-step">next</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                        <h3>Step two</h3>
+                        <p>Second step</p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">next</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <h3>Step three</h3>
+                        <p>Third step</p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">next</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <h3>Complete steps</h3>
+                        <p>You have successfully completed every steps.</p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Submit</button></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+<!--
+
+      <form id="example-form" action="#">
+        <div id="wizard">
+          <h3>Name</h3>
+          <section>
+              <legend>Account Information</legend>
+
+              <label for="userName-2">First, let's get to know each other. What's your name ?</label>
+              <input id="userName-2" name="userName" type="text" class="required">
+
+          </section>
+
+          <h3>University</h3>
+          <section>
+              <legend>University Information</legend>
+
+              <label for="userName-2">What university are you in ?</label>
+              <input id="userName-2" name="userName" type="text" class="required">
+
+          </section>
+
+          <h3>Field</h3>
+          <section>
+              <legend>Field Information</legend>
+
+              <label for="userName-2">What do you study ?</label>
+              <input id="userName-2" name="userName" type="text" class="required">
+
+          </section>
+
+          <h3>Teaching</h3>
+          <section>
+              <legend>Teaching Information</legend>
+
+              <label for="userName-2">Do you want to teach X ?</label>
+              <input id="userName-2" name="userName" type="text" class="required">
+
+          </section>
+
+          <h3>Hobbies</h3>
+          <section>
+              <legend>Hobbies Information</legend>
+
+              <label for="userName-2">What are your hobbies ?</label>
+              <input id="userName-2" name="userName" type="text" class="required">
+
+          </section>
+
+          <h3>Help</h3>
+          <section>
+              <legend>Help Information</legend>
+
+              <label for="userName-2">What are the activities in which you can help your buddies ?</label>
+              <input id="userName-2" name="userName" type="text" class="required">
+
+          </section>
+
+          <h3>Email</h3>
+          <section>
+              <legend>Email Information</legend>
+
+              <label for="userName-2">What's your email ?</label>
+              <input id="userName-2" name="userName" type="text" class="required">
+
+          </section>
+
+          <h3>Password</h3>
+          <section>
+              <legend>Account Information</legend>
+
+              <label for="userName-2">Great ! Now choose your password to finalize your account ?</label>
+              <input id="userName-2" name="userName" type="text" class="required">
+
+          </section>
+        </div>
+      </form> -->
+    </div>
+  </div>
+  <h3>Already have an account ? Login !</h3>
+</div>
+
+<%= content_for :body_js do %>
+  <script>
+    $("#wizard").steps({
+      headerTag: "h1",
+      bodyTag: "section",
+      transitionEffect: "slideLeft",
+      onStepChanging: function (event, currentIndex, newIndex) {
+    },
+    onFinishing: function (event, currentIndex) {
+    }
+    });
+  </script>
+<% end %>
+
