@@ -1,2 +1,13 @@
-<h1>Services#new</h1>
-<p>Find me in app/views/services/new.html.erb</p>
+<div class="container">
+  <h2>Post an offer :</h2>
+  <%= simple_form_for @venue do |f| %>
+    <%= f.input :name, maxlength: 15 %>
+    <%= f.input :email %>
+    <%= f.input :description %>
+    <%= f.input :helpies %>
+    <%= f.association :category %>
+    <%= f.submit "add a venue", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<!-- add a picture button for users to add photos of service -->

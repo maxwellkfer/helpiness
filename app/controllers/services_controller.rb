@@ -1,11 +1,11 @@
 class ServicesController < ApplicationController
-  authorize @service
 
   def index
     @services = policy_scope(Service).order(created_at: :desc)
   end
 
   def show
+    authorize @service
     @service = Service.find(params:[id])
   end
 
@@ -15,6 +15,7 @@ class ServicesController < ApplicationController
 
 
   def create
+    authorize @service
     @service = Service.new(service_params)
     @service.save
   end
@@ -24,18 +25,21 @@ class ServicesController < ApplicationController
   end
 
   def update
+    authorize @service
     @service = Service.find(params[:id])
     if @service.update(service_params)
-      redirect_to service_path(@service)
+      redirect_to service_path
     else
-      render: @service.edit
+      render :edit
     end
   end
 
   def destroy
+    authorize @service
     @service.user = current_user
     @service = Service.find(params[:id])
     @service.destroy
+    redirect_to service_path
   end
 
   private
