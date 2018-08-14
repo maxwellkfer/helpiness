@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :skills do
-    resources :categories
+  resources :categories do
+    resources :skills
   end
 
   resources :services do
     resources :bookings do
-      resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+      resources :reviews, only: [:new, :create]
     end
   end
 
