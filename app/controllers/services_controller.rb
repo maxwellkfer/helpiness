@@ -1,8 +1,9 @@
 class ServicesController < ApplicationController
-  def show
+  def index
+    @services = policy_scope(Service).order(created_at: :desc)
   end
 
-  def index
+  def show
   end
 
   def new

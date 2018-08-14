@@ -1,2 +1,8 @@
+<% @services.each do |service| %>
+  <% if policy(service).edit? %>
+    <%= link_to "Update", edit_service_path(service) %>
+  <% end %>
+<% end %>
+
 <h1>Services#update</h1>
 <p>Find me in app/views/services/update.html.erb</p>
