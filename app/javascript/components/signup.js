@@ -2,8 +2,8 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["Change your life", "Learn to code"],
-    typeSpeed: 50,
+    strings: ["Exchange a service for Helpies", "Spend your Helpies on a service."],
+    typeSpeed: 60,
     loop: true
   });
 }
