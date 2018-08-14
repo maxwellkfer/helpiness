@@ -5,8 +5,8 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @service = Service.find(params[:id])
     authorize @service
-    @service = Service.find(params:[id])
   end
 
   def new
@@ -16,9 +16,13 @@ class ServicesController < ApplicationController
 
 
   def create
-    authorize @service
     @service = Service.new(service_params)
-    @service.save
+    authorize @service
+    if @service.save
+      redirect_to services.services_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -48,6 +52,6 @@ class ServicesController < ApplicationController
   def service_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:service).permit(:name,:helpies, :description, :photo, :user_id, :category_id)
+    params.require(:service).permit(:name,:helpies, :description, :photo, :photo_cache, :user_id, :category_id)
   end
 end
