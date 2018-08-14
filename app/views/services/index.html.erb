@@ -3,3 +3,24 @@
   <p><%= service.category.name %></p>
   <p><%= service.user.name %></p>
 <% end %>
+
+<div class="container">
+  <h1 class="text-center" id="venue">Venues</h1>
+  <div class="cards">
+    <div class="row">
+      <% @services.each do |service| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= link_to service_path(service) do %>
+          <div class="venue-card">
+            <%= cl_image_tag("#") %>
+            <div class="card-category"><%= service.category.name %></div>
+            <div class="card-description"><%= "description truncate_words(10)" %></div>
+            <div class="card-name"><%= service.name %></div>
+            <div class="card-price"><%= service.helpies %> €</div>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
