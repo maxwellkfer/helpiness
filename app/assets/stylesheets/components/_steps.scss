@@ -2,6 +2,17 @@
     Common
 */
 
+body {
+  color: #717072;
+}
+
+input[type=text] {
+    background: transparent;
+    border: none !important;
+    border-bottom: 2px solid #b7b6b9 !important;
+}
+
+
 .legend {
   display: none;
 }
@@ -148,7 +159,7 @@
     background: #f4f4f4;
     display: block;
     margin: 0.5em;
-    min-height: 35em;
+    min-height: 20em;
     overflow: hidden;
     position: relative;
     width: auto;
@@ -214,6 +225,7 @@
 {
     display: inline-block;
     margin-bottom: 0.5em;
+    display: none;
 }
 
 .wizard > .content > .body label.error
@@ -259,7 +271,7 @@
 .wizard > .actions a:hover,
 .wizard > .actions a:active
 {
-    background: #2184be;
+    background: #f9cb5a;
     color: #fff;
     display: block;
     padding: 0.5em 1em;
