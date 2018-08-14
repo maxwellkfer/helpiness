@@ -3,10 +3,10 @@
     <a class="nav-link active" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="pills-services-tab" data-toggle="pill" href="#pills-services" role="tab" aria-controls="pills-services" aria-selected="false">services</a>
+    <a class="nav-link" id="pills-offers-tab" data-toggle="pill" href="#pills-offers" role="tab" aria-controls="pills-offers" aria-selected="false">Offers</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="pills-bookings-tab" data-toggle="pill" href="#pills-bookings" role="tab" aria-controls="pills-bookings" aria-selected="false">Bookings</a>
+    <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false">Requests</a>
   </li>
 </ul>
 
@@ -16,7 +16,7 @@
       <div class="half left">
         <%= image_tag("https://media.pri.org/s3fs-public/styles/story_main/public/dalai_lama_10_15_2012.jpeg?itok=wvuNtWci", id:"profile-pic") %>
         <span class="name">
-          <%= @user.first_name%>
+          <%= current_user.first_name %>
         </span>
       </div>
       <div class="half right">
@@ -51,4 +51,6 @@
   <div class="tab-pane fade" id="pills-bookings" role="tabpanel" aria-labelledby="pills-bookings-tab">
     <%= render 'bookings/index' %>
   </div>
+
+
 </div>
