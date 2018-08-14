@@ -1,0 +1,19 @@
+<!-- <div class="tab-pane fade" id="pills-bookings" role="tabpanel" aria-labelledby="pills-bookings-tab"> -->
+  <% @bookings.each do |booking| %>
+  <div class="cards">
+    <div class="row half-left">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= link_to service_path(booking.service) do %>
+        <div class="venue-card">
+          <%= cl_image_tag(booking.venue.photo_url, width: 200, height: 150, crop: :fill, class: "card-img") %>
+          truncate_words(10) %></div>
+          <div class="card-name"><%= booking.service.name %></div>
+          <div class="card-description"><%= booking.service.description %></div>
+          <div class="card-price"><%= booking.service.helpies %> €</div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+<!-- </div> -->

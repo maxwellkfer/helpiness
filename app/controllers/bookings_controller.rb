@@ -15,6 +15,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.service = Service.find[:service_id]
+      if @booking.save
+        redirect_to venue_path(@booking.venue), notice: "Your request has been sent!"
+      else
+        redirect_to venue_path(@booking.venue), alert: "Please fill out all fields"
+    end
   end
 
   def edit
