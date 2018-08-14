@@ -11,6 +11,7 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
+    authorize @service
   end
 
 

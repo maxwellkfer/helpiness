@@ -1,12 +1,11 @@
 <div class="container">
   <h2>Post an offer :</h2>
-  <%= simple_form_for @venue do |f| %>
+  <%= simple_form_for @service do |f| %>
     <%= f.input :name, maxlength: 15 %>
-    <%= f.input :email %>
-    <%= f.input :description %>
+    <%= f.input :rating %>
     <%= f.input :helpies %>
     <%= f.association :category %>
-    <%= f.submit "add a venue", class: "btn btn-primary" %>
+    <%= f.submit "add a service", class: "btn btn-primary" %>
   <% end %>
 </div>
 
