@@ -1,0 +1,34 @@
+.banner {
+  display: flex;
+  background-size: cover;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-content {
+  font-size: larger;
+  color: white;
+  text-align: center;
+}
+
+.banner-content p {
+  margin-bottom: 50px;
+}
+
+.show-banner {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.show-banner-price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0px 40px;
+}
