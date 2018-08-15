@@ -1,21 +1,21 @@
-<<<<<<< HEAD
-<h2><%= @service.name %></h2>
-<p><%= @service.category.name %></p>
-<p><%= @service.user.first_name %></p>
-<p><%= @service.user.last_name %></p>
-<p><%= @service.helpies %></p>
-<p><%= @service.rating %></p>
-=======
 <div class="container">
   <div class="row">
     <div class="col-xs-8">
       <h1><%= @service.name.capitalize %></h1>
     </div>
     <div class="col-xs-1 col-xs-offset-2">
-      <button type="button" class="btn btn-primary trigger-btn" data-toggle="modal" data-target="#exampleModal">
-        Book
-      </button>
-      <%= render 'bookings/new' %>
+      <!-- if user clicks the botton, I want to change the status of my booking to pending -->
+      <form action="/services/<%= @service.id %>/bookings" method= "post">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <div class="helpies">
+            <label for="guests">NUMBER OF HELPIES</label><br/><br/>
+            <h2><%= @service.helpies %> Helpies</h2>
+          </div>
+            <button type="submit" class="btn btn-primary trigger-btn" data-toggle="modal" data-target="#exampleModal" name = "booking[status]">
+              Book
+            </button>
+          <!-- <button type="submit" class="btn-book btn-primary" name="booking[status]">Request now</button> -->
+        </form>
     </div>
     <% if @service.photo_url %>
     <% photo = cl_image_path(@service.photo_url) %>
@@ -40,4 +40,4 @@
 
 
 
->>>>>>> 9d58d8c344dca733ac502087dd0c7ae1d7bfb8aa
+

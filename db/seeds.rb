@@ -9,6 +9,7 @@
 Category.destroy_all
 
 
+
 service_categories = ["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"]
 
 service_categories.each do |category|
