@@ -1,3 +1,13 @@
+<div class="container">
+  <br>
+  <br>
+  <h1>Welcome on Helpiness !</h1>
+
+
+
+
+  <%=  collection_select(:post, :category_id, University.all, :id, :name,
+  {}, class: "select2") %>
 
 
 
@@ -5,14 +15,10 @@
 <%= simple_form_for(resource, as: resource_name, id: "signup", url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="container">
   <div class="row">
 
     <div class="col-xs-12 col-sm-4">
-      <br>
-      <br>
-      <br>
-      <%= image_tag "borat.png", width: 300 %>
+      <%= image_tag "helpster.png", width: 300 %>
     </div>
 
     <div class="col-xs-12 col-sm-6 col-offset-2">
@@ -31,7 +37,7 @@
 
 
 
-              <h3>Hello, great success to meet you !</h3>
+              <h3>Hello, I am Helpster !</h3>
 
               <br>
                 <h4>What is your name ?</h4>
@@ -39,7 +45,7 @@
                 <br>
               <br>
 
-              <%= f.input :first_name, required: true, label: ""  %>
+              <%= f.input :first_name, required: true, label: "", autocomplete: "off"  %>
           </section>
 
           <h3>University</h3>
@@ -57,10 +63,12 @@
               <br>
                 <h4>What university are you in ?</h4>
 
+
                 <br>
               <br>
 
-              <%= f.input :university, required: true,label: "What university are you in ?" %>
+
+
             </section>
 
           <h3>Field</h3>
