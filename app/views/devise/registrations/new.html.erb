@@ -60,7 +60,7 @@
                 <br>
               <br>
 
-              <%= f.input :university, required: true, label: "What university are you in ?" %>
+              <%= f.input :university, required: true,label: "What university are you in ?" %>
             </section>
 
           <h3>Field</h3>
@@ -184,11 +184,24 @@
         return true;
       }
     });
-$("input").keypress(function(event) {
-    if (event.which == 13) {
-        event.preventDefault();
-        $("#next").submit();
+
+
+
+
+
+  document.addEventListener('keypress', (event) => {
+    const keyCode = 13;
+    if (event.charCode == keyCode) {
+
+      $( "a:contains('Next')").click();
+
+      if ($(".actions>ul>li").hasClass('disabled')) {
+          $( "a:contains('Finish')").click();
+          console.log("here");
+      }
+
     }
+
   });
   </script>
 <% end %>
