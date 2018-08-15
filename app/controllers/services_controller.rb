@@ -14,7 +14,6 @@ class ServicesController < ApplicationController
     authorize @service
   end
 
-
   def create
     @service = Service.new(service_params)
     @service.user = current_user
