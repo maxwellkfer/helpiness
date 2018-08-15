@@ -14,6 +14,10 @@ class ApplicationPolicy
     false
   end
 
+  def dashboard
+    true
+  end
+
   def create?
     false
   end
