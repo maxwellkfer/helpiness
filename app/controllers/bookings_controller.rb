@@ -3,6 +3,16 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accepted!
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.declined!
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -14,6 +24,7 @@ class BookingsController < ApplicationController
   def create
     skip_authorization
     @booking = Booking.new(booking_params)
+    @booking.customer = current_user
     @booking.service = Service.find(params[:service_id])
       if @booking.save
         redirect_to service_path(@booking.service), notice: "Your request has been sent!"
@@ -40,6 +51,6 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.require(:booking).permit(:status)
+    params.require(:booking).permit(:user_id, :service_id)
   end
 end
