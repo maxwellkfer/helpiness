@@ -2,6 +2,13 @@ class ServicesController < ApplicationController
 
   def index
     @services = policy_scope(Service).order(created_at: :desc)
+
+    if params[:query].present?
+      @services = Service.global_search(params[:query])
+    else
+      @services = Service.all
+    end
+
   end
 
   def show
