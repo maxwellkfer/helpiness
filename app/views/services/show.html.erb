@@ -18,9 +18,9 @@
         </form>
     </div>
     <% if @service.photo_url %>
-    <% photo = cl_image_path(@service.photo_url) %>
+      <% photo = cl_image_path(@service.photo_url) %>
     <% else %>
-    <% photo = "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
+      <% photo = "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
     <% end %>
     <div class="col-xs-12">
      <div class="show-banner" style="background-image: url('<%= photo %>')">
