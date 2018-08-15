@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :skills
   has_many :services
   has_many :bookings
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

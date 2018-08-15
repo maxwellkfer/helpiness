@@ -16,11 +16,13 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
+    @service.user = current_user
     authorize @service
+
     if @service.save
-      redirect_to services.services_path
+      redirect_to service_path(@service)
     else
-      render :new
+      render :new, error: "Failed to save"
     end
   end
 
