@@ -1,43 +1,8 @@
-<<<<<<< HEAD
-<h2><%= @service.name %></h2>
-<p><%= @service.category.name %></p>
-<p><%= @service.user.first_name %></p>
-<p><%= @service.user.last_name %></p>
-<p><%= @service.helpies %></p>
-<p><%= @service.rating %></p>
-=======
-<div class="container">
-  <div class="row">
-    <div class="col-xs-8">
-      <h1><%= @service.name.capitalize %></h1>
-    </div>
-    <div class="col-xs-1 col-xs-offset-2">
-      <button type="button" class="btn btn-primary trigger-btn" data-toggle="modal" data-target="#exampleModal">
-        Book
-      </button>
-      <%= render 'bookings/new' %>
-    </div>
-    <% if @service.photo_url %>
-    <% photo = cl_image_path(@service.photo_url) %>
-    <% else %>
-    <% photo = "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
-    <% end %>
-    <div class="col-xs-12">
-     <div class="show-banner" style="background-image: url('<%= photo %>')">
-      <div class="show-banner-price">
-        <h3><%= @service.helpies %>€ / day</h3>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="col-xs-12">
-  <div class="service-show-description">
-    <p><%= @service.description%></p>
-  </div>
-</div>
+<%= form_tag services_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a service"
+  %>
+<% end %>
 
-
-
-
->>>>>>> 9d58d8c344dca733ac502087dd0c7ae1d7bfb8aa
