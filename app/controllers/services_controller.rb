@@ -5,6 +5,10 @@ class ServicesController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9d58d8c344dca733ac502087dd0c7ae1d7bfb8aa
     @service = Service.find(params[:id])
     authorize @service
   end
@@ -17,6 +21,18 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
+<<<<<<< HEAD
+    @service.user = current_user
+    authorize @service
+
+    if @service.save
+      redirect_to service_path(@service)
+    else
+      render :new, error: "Failed to save"
+    end
+
+
+=======
 
     authorize @service
     if @service.save
@@ -24,6 +40,7 @@ class ServicesController < ApplicationController
     else
       render :new
     end
+>>>>>>> 9d58d8c344dca733ac502087dd0c7ae1d7bfb8aa
   end
 
   def edit
