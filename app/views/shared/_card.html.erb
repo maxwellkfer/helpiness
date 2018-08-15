@@ -15,8 +15,9 @@
 
           <div class="card-category"><%= service.category.name %></div>
           <div class="card-description"><%= service.description.truncate_words(10) %></div>
+          <br>
           <div class="card-name"><%= service.name %></div>
-          <div class="card-price"><%= service.helpies %> €</div>
+          <div class="card-helpies"><%= service.helpies %> <i class="far fa-hand-paper"></i></div>
           <% end %>
         </div>
       </div>
