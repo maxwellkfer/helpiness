@@ -12,13 +12,13 @@ class BookingsController < ApplicationController
   end
 
   def create
+    skip_authorization
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    @booking.service = Service.find[:service_id]
+    @booking.service = Service.find(params[:service_id])
       if @booking.save
-        redirect_to venue_path(@booking.venue), notice: "Your request has been sent!"
+        redirect_to service_path(@booking.service), notice: "Your request has been sent!"
       else
-        redirect_to venue_path(@booking.venue), alert: "Please fill out all fields"
+        redirect_to service_path(@booking.service), alert: "Please fill out all fields"
     end
   end
 
