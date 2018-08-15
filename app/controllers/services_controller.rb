@@ -17,6 +17,7 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
+
     authorize @service
     if @service.save
       redirect_to services.services_path
@@ -53,5 +54,6 @@ class ServicesController < ApplicationController
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
     params.require(:service).permit(:name,:helpies, :description, :photo, :photo_cache, :user_id, :category_id)
+
   end
 end
