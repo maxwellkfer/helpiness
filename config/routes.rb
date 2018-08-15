@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :universities
+
   devise_for :users, path: "accounts"
   root to: 'pages#home'
 
