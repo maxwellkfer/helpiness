@@ -2,8 +2,15 @@ class UsersController < ApplicationController
   def dashboard
     skip_authorization
     if user_signed_in?
+      # services created by current_user
       @services = current_user.services
-      @bookings = current_user.bookings
+      @bookings = []
+
+      # all bookings for those services
+      @services.each do |service|
+        @bookings << service.bookings
+      end
+      @bookings.flatten!
     end
   end
 
