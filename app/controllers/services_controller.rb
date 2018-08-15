@@ -17,7 +17,6 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     authorize @service
-    raise
     if @service.save
       redirect_to services.services_path
     else
