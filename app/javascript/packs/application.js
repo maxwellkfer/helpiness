@@ -1,3 +1,6 @@
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/signup';
-loadDynamicBannerText();
+
+if (document.getElementById("typed-js-home")) {
+  loadDynamicBannerText();
+}
