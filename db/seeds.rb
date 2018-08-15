@@ -1,17 +1,68 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
+
+Service.destroy_all
+User.destroy_all
 Category.destroy_all
 
+NAMES = ["Augusto Menezes", "Antelmo Bandeira", "Dinis Roque", "Vicente Pascoal",
+
+ "Feliciano Resende", "Victorino Gusmão", "Xavier Rodrigues", "Jacó Álvares",
+
+ "Carmo Azevedo", "Otávio Barbosa", "Alexandra Nogueira", "Érica Valente",
+
+ "Brígida Fidalgo", "Paulinha Leitão", "Leonor Leite", "Luzia Soares",
+
+ "Iara Cortes", "Soraia Furtado", "Vera Fernandes", "Bruna Pacheco", "Vi Gose",
+
+ "Teddy Boshart", "Krista Herriman", "Mardell Dove", "Mildred Flippo",
+
+ "Wilbert Orourke", "Mohammad Morales", "Malorie Klapper", "Jeniffer Obrian", "Judy Dejean"]
+DESCRIPTION = [""]
+
+["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
+  Category.create({name: category})
+end
+
+20.times do
+
+ user = User.new(
+  first_name: NAMES.sample,
+  email: Faker::Internet.email,
+  password: "asdfgh"
+ )
+
+ user.save!
+
+ 5.times do
+  Service.create(
+    name: Faker::Job.field,
+    description: "smsmmsm",
+    helpies: rand(1...500),
+    category: Category.all.sample,
+    user: user
+    )
+ end
+
+end
 
 
-service_categories = ["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"]
 
-service_categories.each do |category|
-  Category.create!({name: category})
+20.times do
+ customer = User.new(
+  first_name: NAMES.sample,
+  email: Faker::Internet.email,
+  password: "asdfgh",
+  university: "random uni"
+ )
+
+ customer.save
+
+ 20.times do
+  Booking.create(
+   service: Service.all.sample,
+   customer: customer
+  )
+ end
+
 end
