@@ -2,13 +2,16 @@ class ServicesController < ApplicationController
 
   def index
     @services = policy_scope(Service).order(created_at: :desc)
+
+    if params[:query].present?
+      @services = Service.global_search(params[:query])
+    else
+      @services = Service.all
+    end
+
   end
 
   def show
-<<<<<<< HEAD
-
-=======
->>>>>>> 9d58d8c344dca733ac502087dd0c7ae1d7bfb8aa
     @service = Service.find(params[:id])
     authorize @service
   end
@@ -18,10 +21,8 @@ class ServicesController < ApplicationController
     authorize @service
   end
 
-
   def create
     @service = Service.new(service_params)
-<<<<<<< HEAD
     @service.user = current_user
     authorize @service
 
@@ -30,17 +31,6 @@ class ServicesController < ApplicationController
     else
       render :new, error: "Failed to save"
     end
-
-
-=======
-
-    authorize @service
-    if @service.save
-      redirect_to services.services_path
-    else
-      render :new
-    end
->>>>>>> 9d58d8c344dca733ac502087dd0c7ae1d7bfb8aa
   end
 
   def edit

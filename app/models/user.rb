@@ -4,7 +4,9 @@ class User < ApplicationRecord
   has_many :skills
   has_many :services
   has_many :bookings
+
   belongs_to :university
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

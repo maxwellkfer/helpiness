@@ -1,0 +1,26 @@
+<div class="cards">
+    <div class="row">
+      <% @services.each do |service| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="service-card">
+          <%= link_to service_path(service) do %>
+          <div class="card-img">
+            <% if service.photo_url %>
+              <%#= image_tag(service.photo_url, class: "card-img") %>
+              <%= cl_image_tag(service.photo_url, width: 200, height: 150, crop: :fill, class: "card-img") %>
+            <% else %>
+              <%= image_tag "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
+            <% end %>
+          </div>
+
+          <div class="card-category"><%= service.category.name %></div>
+          <div class="card-description"><%= service.description.truncate_words(10) %></div>
+          <div class="card-name"><%= service.name %></div>
+          <div class="card-price"><%= service.helpies %> €</div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
