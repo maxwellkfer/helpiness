@@ -1,0 +1,14 @@
+<div class="cards">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <% @services.each do |service| %>
+      <h1><%= service.name %></h1>
+      <% Booking.where(service: service).each do |booking| %>
+      <h3><%= booking.customer.first_name%></h3>
+      <h5><%=link_to "Accept", service_booking_accept_path(service, booking), method: "patch"  %></h5>
+      <h5><%=link_to "Decline", service_booking_decline_path(service, booking), method: "patch"  %></h5>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
