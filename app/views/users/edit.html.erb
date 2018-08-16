@@ -2,6 +2,6 @@
 <p>Find me in app/views/users/edit.html.erb</p>
 
 
-<%=  collection_select(:post, :category_id, University.all, :id, :name,
+<%=  collection_select(:post, :university_id, University.all, :id, :name,
   {}, class: "select2") %>
 
