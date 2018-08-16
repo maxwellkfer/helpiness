@@ -1,39 +1,40 @@
 <div class="container">
-  <div class="row">
+  <div class="row-intro">
     <div class="col-xs-8">
+
       <h1><%= @service.name.capitalize %></h1>
     </div>
     <div class="col-xs-1 col-xs-offset-2">
       <!-- if user clicks the botton, I want to change the status of my booking to pending -->
-      <form action="/services/<%= @service.id %>/bookings" method= "post">
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          <div class="helpies">
-            <label for="guests">NUMBER OF HELPIES</label><br/><br/>
-            <h2><%= @service.helpies %> Helpies</h2>
-          </div>
-            <button type="submit" class="btn btn-primary trigger-btn" data-toggle="modal" data-target="#exampleModal" name = "booking[status]">
-              Book
-            </button>
-          <!-- <button type="submit" class="btn-book btn-primary" name="booking[status]">Request now</button> -->
-        </form>
+
+
+        <button type="submit" class="btn btn-primary trigger-btn" data-toggle="modal" data-target="#exampleModal" name = "booking[status]">
+          Book
+        </button>
+        <!-- <button type="submit" class="btn-book btn-primary" name="booking[status]">Request now</button> -->
+      </form>
     </div>
-    <% if @service.photo_url %>
-      <% photo = cl_image_path(@service.photo_url) %>
-    <% else %>
-      <% photo = "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
-    <% end %>
-    <div class="col-xs-12">
-     <div class="show-banner" style="background-image: url('<%= photo %>')">
-      <div class="show-banner-price">
-        <h3><%= @service.helpies %>€ / day</h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <% if @service.photo_url %>
+        <% photo = cl_image_path(@service.photo_url) %>
+        <% else %>
+        <% photo = "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
+        <% end %>
+        <div class="col-xs-12">
+
+          <div class="show-banner" style="background-image: url('<%= photo %>')">
+            <div class="show-banner-price">
+              <h3><%= @service.helpies %> <i class="far fa-hand-paper"></i></div></h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-<div class="col-xs-12">
-  <div class="service-show-description">
-    <p><%= @service.description%></p>
+  <div class="col-xs-12">
+    <div class="service-show-description">
+      <p><%= @service.description%></p>
+    </div>
   </div>
-</div>
 
