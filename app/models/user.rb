@@ -5,7 +5,7 @@
   has_many :services
   has_many :bookings
 
-  belongs_to :university
+  belongs_to :university, optional: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
