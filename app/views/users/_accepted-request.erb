@@ -1,0 +1,12 @@
+<div class="cards">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <% @services.each do |service| %>
+      <h1><%= service.name %>ACCEPTED</h1>
+      <% Booking.where(service: service, status: "accepted").each do |accepted| %>
+      <h3><%= accepted.customer.first_name%></h3>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
