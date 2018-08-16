@@ -13,7 +13,7 @@ class Service < ApplicationRecord
   against: [ :helpies, :rating ],
   associated_against: {
     category: [ :name ],
-    user: [ :university ]
+    user: [ :university_id ]
   },
   using: {
     tsearch: { prefix: true }
