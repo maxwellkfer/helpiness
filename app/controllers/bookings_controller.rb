@@ -4,11 +4,13 @@ class BookingsController < ApplicationController
   end
 
   def accept
-    @booking = Booking.find(params[:id])
+    skip_authorization
+    @booking = Booking.find(params[:booking_id])
     @booking.accepted!
   end
 
   def decline
+    skip_authorization
     @booking = Booking.find(params[:id])
     @booking.declined!
   end

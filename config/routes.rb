@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :services do
-    resources :bookings
+    resources :bookings do
+      patch "/accept", to: "bookings#accept"
+      patch "/decline", to: "bookings#decline"
+    end
   end
 
   get "dashboard", to: 'users#dashboard', as: 'dashboard'

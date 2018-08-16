@@ -48,7 +48,11 @@
     </div>
 
     <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
-      <p>see ya</p>
+      <p><%if current_user.services %></p>
+            <%= render 'user-request'%>
+          <%else%>
+            <p>You aren't offering any services yet</p>
+          <%end%></p>
     </div>
   </div>
 </div>
