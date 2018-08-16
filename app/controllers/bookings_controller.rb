@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+
   end
 
   def accept
@@ -9,10 +10,13 @@ class BookingsController < ApplicationController
     @booking.accepted!
   end
 
+
+
   def decline
     skip_authorization
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:booking_id])
     @booking.declined!
+    redirect_to dashboard_path
   end
 
   def show
