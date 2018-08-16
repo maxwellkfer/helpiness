@@ -9,4 +9,11 @@
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+before_save :default_values
+  def default_values
+    self.helpies ||= 60
+
+  end
+
 end
