@@ -11,8 +11,8 @@
 
       <!-- Links when logged in -->
       <%= link_to "Create", new_service_path, class: "navbar-helpiness-item navbar-helpiness-link" %>
-      <%= link_to "Trips", "#", class: "navbar-helpiness-item navbar-helpiness-link" %>
-      <%= link_to "Messages", "#", class: "navbar-helpiness-item navbar-helpiness-link" %>
+      <%= link_to "Services", services_path, class: "navbar-helpiness-item navbar-helpiness-link" %>
+      <%= link_to "Messages", conversations_path, class: "navbar-helpiness-item navbar-helpiness-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-helpiness-item">
@@ -53,7 +53,7 @@
         <% if user_signed_in? %>
 
 
-          <li><%= link_to "Host", "#", class: "navbar-helpiness-item navbar-helpiness-link" %></li>
+          <li><%= link_to "Services", "#", class: "navbar-helpiness-item navbar-helpiness-link" %></li>
           <li><%= link_to "Trips", "#", class: "navbar-helpiness-item navbar-helpiness-link" %></li>
           <li><%= link_to "Messages", "#", class: "navbar-helpiness-item navbar-helpiness-link" %></li>
 

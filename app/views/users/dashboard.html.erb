@@ -12,7 +12,7 @@
     <p><%= current_user.helpies %></p>
 
     <% unless current_user.university.nil?  %>
-    <h3>Member of <%= current_user.university.capitalize%></h3>
+      <h3>Member of <%= current_user.university.capitalize%></h3>
     <% end %>
   </div>
 
@@ -45,12 +45,15 @@
       <p>hello</p>
     </div>
 
-    <div class="tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab">
-      <p><%if current_user.services %></p>
-            <%= render 'shared/card'%>
-          <%else%>
-            <p>You aren't offering any services yet</p>
-          <%end%>
+    <div class="container tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab" style="display: flex;">
+
+
+        <p><%if current_user.services %></p>
+        <%= render 'shared/card'%>
+        <%else%>
+        <p>You aren't offering any services yet</p>
+        <%end%>
+
     </div>
 
     <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
@@ -60,8 +63,7 @@
             <p>You aren't offering any services yet</p>
           <%end%></p>
     </div>
-
-
+  
     <div class="tab-pane fade" id="accepted-requests" role="tabpanel" aria-labelledby="accepted-requests-tab">
       <p><%if current_user.services %></p>
             <%= render 'accepted-request'%>

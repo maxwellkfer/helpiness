@@ -10,10 +10,10 @@ class Service < ApplicationRecord
   include PgSearch
 
   pg_search_scope :global_search,
-  against: [ :helpies, :rating ],
+  against: [ :name, :helpies, :rating ],
   associated_against: {
     category: [ :name ],
-    user: [ :university ]
+    user: [ :university_id ]
   },
   using: {
     tsearch: { prefix: true }

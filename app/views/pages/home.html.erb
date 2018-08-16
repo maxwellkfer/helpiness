@@ -6,7 +6,12 @@
 
     <p></p>
     <br>
+
+    <% if user_signed_in? %>
+    <%= render "services/search_form" %>
+    <% else %>
     <a href="/accounts/sign_up" class="btn-yours">Let's do it!</a>
+    <% end %>
   </div>
 </div>
 
