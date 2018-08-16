@@ -18,11 +18,10 @@
     text-decoration: none;
   }
 
-
 .card-category {
   position: absolute;
-  bottom: 130px;
-  left: 60px;
+  bottom: 115px;
+  left: 20px;
   font-size: 10px;
   text-transform: uppercase;
   color: grey;
@@ -32,8 +31,9 @@
   position: absolute;
   margin: 0px 8px;
   font-size: 9px;
-  bottom: 90px;
-  left: 140px;
+  bottom: 60px;
+  left: 40px;
+  padding-right: 20px;
   text-transform: uppercase;
   text-align: center;
   color: grey;
@@ -41,8 +41,8 @@
 
 .card-helpies {
   position: absolute;
-  bottom: 130px;
-  right: 80px;
+  bottom: 115px;
+  right: 20px;
   font-size: 15px;
   text-transform: uppercase;
   color: grey;
@@ -50,8 +50,8 @@
 
 .card-name {
   position: absolute;
-  bottom: 40px;
-  right: 70px;
+  bottom: 10px;
+  right: 15px;
   color: #4a9da5;
   text-transform: uppercase;
   font-size: 16px;
