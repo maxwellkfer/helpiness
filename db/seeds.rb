@@ -1,9 +1,8 @@
-
 Booking.destroy_all
-
 Service.destroy_all
 User.destroy_all
 Category.destroy_all
+University.destroy_all
 
 NAMES = ["Augusto Menezes", "Antelmo Bandeira", "Dinis Roque", "Vicente Pascoal",
 
@@ -24,13 +23,16 @@ DESCRIPTION = [""]
   Category.create({name: category})
 end
 
+uni = University.create name: 'Durham'
+
 20.times do
 
  user = User.new(
   first_name: NAMES.sample,
   email: Faker::Internet.email,
-  password: "asdfgh"
- )
+  password: "asdfgh",
+  university_id: uni.id
+  )
 
  user.save!
 
@@ -53,7 +55,7 @@ end
   first_name: NAMES.sample,
   email: Faker::Internet.email,
   password: "asdfgh",
-  university: "random uni"
+  university_id: uni.id
  )
 
  customer.save
