@@ -33,7 +33,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" id="accepted-requests-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="accepted-requests" aria-selected="false">
+        <a class="nav-link" id="accepted-requests-tab" data-toggle="tab" href="#accepted-requests" role="tab" aria-controls="accepted-requests" aria-selected="false">
           Accepted-Request
         </a>
       </li>
@@ -63,7 +63,7 @@
             <p>You aren't offering any services yet</p>
           <%end%></p>
     </div>
-  
+
     <div class="tab-pane fade" id="accepted-requests" role="tabpanel" aria-labelledby="accepted-requests-tab">
       <p><%if current_user.services %></p>
             <%= render 'accepted-request'%>

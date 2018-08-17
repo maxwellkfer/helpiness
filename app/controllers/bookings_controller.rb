@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     skip_authorization
     @booking = Booking.find(params[:booking_id])
     @booking.accepted!
+    redirect_to accepted_path
   end
 
 
