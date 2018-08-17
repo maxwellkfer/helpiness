@@ -1,0 +1,50 @@
+.form-control {
+  width: none
+}
+.simple_form {
+   background: #fff;
+   border-radius: 20px;
+   box-shadow: 0 0 20px #000;
+   margin: 50px auto;
+   width: 450px;
+
+   h1 {
+      background: #f2c94c;
+      color: #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+   }
+
+   label {
+      display: block;
+      font-style: italic;
+      margin: 12px 0;
+      width: 100%;
+   }
+
+   .container {
+      padding: 10px 60px 40px 60px;
+   }
+
+   input {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: .8em;
+      padding: 5px;
+   }
+
+   [type="submit"] {
+      background: #f2c94c;
+      border: none;
+      color: #fff;
+      display: block;
+      font-size: 1.1em;
+      height: 40px;
+      margin: 30px auto 0 auto;
+      width: 200px;
+   }
+}
+
