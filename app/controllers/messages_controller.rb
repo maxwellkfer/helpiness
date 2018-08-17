@@ -4,8 +4,9 @@ class MessagesController < ApplicationController
     end
 
   def index
+
     skip_policy_scope
-   @messages = @conversation.messages
+    @messages = @conversation.messages
     if @messages.length > 10
      @over_ten = true
      @messages = @messages[-10..-1]
@@ -21,17 +22,20 @@ class MessagesController < ApplicationController
    end
   @message = @conversation.messages.new
    end
+
   def new
     skip_policy_scope
    @message = @conversation.messages.new
   end
+
   def create
-    skip_policy_scope
    @message = @conversation.messages.new(message_params)
+   skip_policy_scope
    if @message.save
     redirect_to conversation_messages_path(@conversation)
    end
   end
+
   private
    def message_params
     params.require(:message).permit(:body, :user_id)
