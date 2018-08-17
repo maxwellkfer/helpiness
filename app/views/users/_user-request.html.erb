@@ -5,8 +5,8 @@
       <% Booking.where(service: service, status: "pending").each do |booking| %>
       <h1><%= service.name %></h1>
       <h3><%= booking.customer.first_name%></h3>
-      <h5><%=link_to "Accept", service_booking_accept_path(service, booking), method: "patch", data: { no_turbolink: true } %></h5>
-      <h5><%=link_to "Decline", service_booking_decline_path(service, booking), method: "patch", data: { no_turbolink: true } %></h5>
+      <h5><%=link_to "Accept", service_booking_accept_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'} %></h5>
+      <h5><%=link_to "Decline", service_booking_decline_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'} %></h5>
       <% end %>
       <% end %>
     </div>
