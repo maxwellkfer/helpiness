@@ -21,6 +21,8 @@ gem 'webpacker'
 gem "pundit"
 gem 'carrierwave', '~> 1.2'
 gem 'pg_search'
+gem 'turbolinks', '~> 5.1.0'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
