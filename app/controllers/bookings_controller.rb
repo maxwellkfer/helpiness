@@ -7,17 +7,24 @@ class BookingsController < ApplicationController
   def accept
     skip_authorization
     @booking = Booking.find(params[:booking_id])
-    @booking.accepted!
-    redirect_to accepted_path
+    if @booking.accepted!
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+      end
+    end
   end
-
 
 
   def decline
     skip_authorization
     @booking = Booking.find(params[:booking_id])
-    @booking.declined!
-    redirect_to dashboard_path
+    if @booking.declined!
+      respond_to do |format|
+        format.html { redirect_to dashboard_path }
+        format.js
+      end
+    end
   end
 
   def show
