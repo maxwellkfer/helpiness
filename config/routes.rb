@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :universities
 
   devise_for :users, path: "accounts"
+  resources :users, only: [:index]
   root to: 'pages#home'
 
   resources :services do
