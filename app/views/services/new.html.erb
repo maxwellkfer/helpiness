@@ -1,14 +1,18 @@
 <div class="container">
-  <h2>Post a service :</h2>
-  <%= simple_form_for @service do |f| %>
-    <%= f.input :name, maxlength: 15 %>
-    <%= f.input :helpies %>
-    <%= f.input :description %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.association :category %>
-    <%= f.submit "add a service", class: "btn btn-primary" %>
-  <% end %>
+  <div class="col-sm-offset-2 col-sm-8">
+    <h2>Post help!</h2>
+    <br>
+    <br>
+    <%= simple_form_for @service do |f| %>
+      <%= f.input :name, label: "Your name", maxlength: 15 %>
+      <%= f.input :helpies, label: "How many helpies?" %>
+      <%= f.input :description, label: "Tell me more..." %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.association :category %>
+      <%= f.submit "Post it!", class: "btn btn-info" %>
+    <% end %>
+  </div>
 </div>
 
 

@@ -3,8 +3,7 @@
   background-size: cover;
   height: 100vh;
   justify-content: center;
-  align-item: center;
-  margin: 0 auto;
+  align-items: center;
 }
 
 .banner-content {
@@ -13,7 +12,9 @@
   text-align: center;
 }
 
-
+.banner-content p {
+  margin-bottom: 50px;
+}
 
 .show-banner {
   width: 100%;
@@ -31,6 +32,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0px 40px;
 }
+
 
 .service-show-description {
 width: 700px;        /* Set the width */
