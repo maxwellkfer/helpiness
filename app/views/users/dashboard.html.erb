@@ -1,5 +1,6 @@
 <div id="wrapper">
   <div id="header">
+  </div>
     <% unless current_user.avatar.nil?  %>
       <img <%= current_user.avatar %>>
     <% end %>
@@ -14,7 +15,6 @@
     <% unless current_user.university.nil?  %>
       <h3>Member of <%= current_user.university.capitalize%></h3>
     <% end %>
-  </div>
 
   <div id="container">
     <ul class= "nav nav-tabs" role="tablist">
@@ -33,7 +33,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" id="accepted-requests-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="accepted-requests" aria-selected="false">
+        <a class="nav-link" id="accepted-requests-tab" data-toggle="tab" href="#accepted-requests" role="tab" aria-controls="accepted-requests" aria-selected="false">
           Accepted-Request
         </a>
       </li>
@@ -45,9 +45,11 @@
       <p>hello</p>
     </div>
 
+
     <div class="container tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-3">
+
         <p><%if current_user.services %></p>
         <%= render 'shared/card'%>
         <%else%>

@@ -1,7 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(242,153,74,0.6) 0%, rgba(242,201,76,0.6) 50%), url('<%= image_url "background.jpg" %>');">
   <div class="banner-content">
 
-    <h1>Welcome, here you can exchange</h1>
+    <div class="titre">
+      <h1>Need help ?</h1>
+    </div>
     <h1><span id="banner-typed-text"></span></h1>
 
     <p></p>
@@ -10,28 +12,10 @@
     <% if user_signed_in? %>
     <%= render "services/search_form" %>
     <% else %>
-    <a href="/accounts/sign_up" class="btn-yours">Let's do it!</a>
+    <a href="/accounts/sign_up" class="btn-yours">Come in !</a>
     <% end %>
   </div>
 </div>
-
-
-
-<select class="select2">
-  <option value="0">Select car:</option>
-  <option value="1">Audi</option>
-  <option value="2">BMW</option>
-  <option value="3">Citroen</option>
-  <option value="4">Ford</option>
-  <option value="5">Honda</option>
-  <option value="6">Jaguar</option>
-  <option value="7">Land Rover</option>
-  <option value="8">Mercedes</option>
-  <option value="9">Mini</option>
-  <option value="10">Nissan</option>
-  <option value="11">Toyota</option>
-  <option value="12">Volvo</option>
-</select>
 
 
 

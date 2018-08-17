@@ -1,19 +1,15 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-4">
-      <%= simple_form_for @service do |f| %>
-        <h1 class="text-center" >Post an offer</h1>
-        <div class="container">
-          <%= f.input :name, maxlength: 15, input_html: {style: 'width: 339px'} %>
-          <%= f.input :helpies, input_html: {style: 'width: 339px'} %>
-          <%= f.input :description, input_html: {style: 'width: 339px'} %>
-          <%= f.input :photo, width: 0 %>
-          <%= f.input :photo_cache, as: :hidden %>
-          <%= f.association :category, input_html: {style: 'width: 339px'} %>
-        </div>
-          <%= f.submit "add a service", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
+  <h2>Post a service :</h2>
+  <%= simple_form_for @service do |f| %>
+    <%= f.input :name, maxlength: 15 %>
+    <%= f.input :helpies %>
+    <%= f.input :description %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.association :category %>
+    <%= f.submit "add a service", class: "btn btn-primary" %>
+  <% end %>
 </div>
+
+
 
