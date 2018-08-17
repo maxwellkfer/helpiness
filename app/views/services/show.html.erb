@@ -1,39 +1,42 @@
 <div class="container">
-  <div class="row">
+  <div class="row-intro">
     <div class="col-xs-8">
+
       <h1><%= @service.name.capitalize %></h1>
     </div>
     <div class="col-xs-1 col-xs-offset-2">
       <!-- if user clicks the botton, I want to change the status of my booking to pending -->
-      <form action="/services/<%= @service.id %>/bookings" method= "post">
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          <div class="helpies">
-            <label for="guests">NUMBER OF HELPIES</label><br/><br/>
-            <h2><%= @service.helpies %> Helpies</h2>
-          </div>
-            <button type="submit" class="btn btn-primary trigger-btn" data-toggle="modal" data-target="#exampleModal" name = "booking[status]">
-              Book
-            </button>
-          <!-- <button type="submit" class="btn-book btn-primary" name="booking[status]">Request now</button> -->
-        </form>
+
+
+        <button type="submit" class="btn btn-primary trigger-btn" data-toggle="modal" data-target="#exampleModal" name = "booking[status]">
+          Book
+        </button>
+        <!-- <button type="submit" class="btn-book btn-primary" name="booking[status]">Request now</button> -->
     </div>
-    <% if @service.photo_url %>
-      <% photo = cl_image_path(@service.photo_url) %>
-    <% else %>
-      <% photo = "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
-    <% end %>
-    <div class="col-xs-12">
-     <div class="show-banner" style="background-image: url('<%= photo %>')">
-      <div class="show-banner-price">
-        <h3><%= @service.helpies %>€ / day</h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <% if @service.photo_url %>
+        <% photo = cl_image_path(@service.photo_url) %>
+        <% else %>
+        <% photo = "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
+        <% end %>
+        <div class="col-xs-12">
+
+          <div class="show-banner" style="background-image: url('<%= photo %>')">
+            <div class="show-banner-price">
+              <h3><%= @service.helpies %> <i class="far fa-hand-paper"></i></div></h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-<div class="col-xs-12">
-  <div class="service-show-description">
-    <p><%= @service.description%></p>
+  <div class="col-xs-12">
+    <div class="service-show-description">
+      <p><%= @service.description%></p>
+      <p>The quiet and stillness of the North. The smell of the forest or a salty breeze on your skin. From the vast landscape of the Prairies, to the West Coastal Islands. Unique experiences for you to slow down, restore & reconnect. Incite personal transformation, inspiration & creativity. A deeper connection to nature, yourself & your intuition. Practice yoga, meditation & breath work. We offer a variety of customized retreats & workshops. Join a current offering or reach out to us about a personalized experience for you or your group. Learn daily practices and tools & find balance and renewal. Shift your perspective, to get back to yourself, and live with intention.
+
+      </p>
+    </div>
   </div>
-</div>
 
