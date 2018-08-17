@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Post an offer :</h2>
+  <h2>Post a service :</h2>
   <%= simple_form_for @service do |f| %>
     <%= f.input :name, maxlength: 15 %>
     <%= f.input :helpies %>
@@ -10,4 +10,6 @@
     <%= f.submit "add a service", class: "btn btn-primary" %>
   <% end %>
 </div>
+
+
 
