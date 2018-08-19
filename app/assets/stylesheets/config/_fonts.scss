@@ -1,6 +1,7 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 @import url("https://fonts.googleapis.com/css?family=Palanquin+Dark");
+@import url('https://fonts.googleapis.com/css?family=Righteous');
 
 // Define fonts for body and headers
 $body-font: "Palanquin Dark", "Helvetica", "sans-serif";
@@ -16,6 +17,14 @@ $headers-font: "Palanquin Dark", "Helvetica", "sans-serif";
 // }
 // $my-font: "Font Name";
 
+.container h1 {
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  color: #f9cb5a;
+}
+
 h1 {
   text-align: center;
+  font-family: 'Righteous', cursive;
+  color: #f9cb5a;
 }

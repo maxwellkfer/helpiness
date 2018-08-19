@@ -1,7 +1,7 @@
 .banner {
   display: flex;
   background-size: cover;
-  height: 100vh;
+  height: 93vh;
   justify-content: center;
   align-items: center;
 }
@@ -37,4 +37,8 @@
 .service-show-description {
 width: 700px;        /* Set the width */
 margin: 0 auto;      /* Set automatic margins on right/left */
+}
+
+.banner h1 {
+  font-family: 'Righteous', cursive;
 }
