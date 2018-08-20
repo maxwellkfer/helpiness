@@ -1,6 +1,9 @@
 <div id="wrapper">
+<<<<<<< HEAD
   <div id="header">
   </div>
+=======
+>>>>>>> b46098c5bd18b941bb807487d08a5703728d86b1
     <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name&.capitalize %></h1>
 
   <div id="container">
@@ -29,16 +32,20 @@
 
   <div class="tab-content">
     <div class="tab-pane fade in active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <p><%= current_user.hobby %></p>
-      <p><%= current_user.field %></p>
-      <p><%= current_user.university&.name %></p>
-      <p>You have <%= current_user.helpies %> Helpies.</p>
-      <%= image_tag current_user.avatar_or_default %>
+      <div class="profile-card">
+        <p><%= current_user.hobby %></p>
+        <p><%= current_user.field %></p>
+        <p>Your university is : <%= current_user.university&.name %></p>
+        <p>You have <%= current_user.helpies %> Helpies.</p>
+        <div class="avatardash">
+          <%= image_tag current_user.avatar_or_default %>
+        </div>
+      </div>
 
     </div>
 
 
-    <div class="container tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab">
+    <div class="tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-3">
 
