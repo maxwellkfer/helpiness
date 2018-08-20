@@ -17,7 +17,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-helpiness-item">
         <div class="dropdown">
-          <%= image_tag current_user.avatar.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-helpiness-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag current_user.avatar_or_default, class: "avatar dropdown-toggle", id: "navbar-helpiness-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-helpiness-dropdown-menu">
             <li>
               <%= link_to dashboard_path do %>
