@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def dashboard
     skip_authorization
+
     if user_signed_in?
       # services created by current_user
       @services = current_user.services
