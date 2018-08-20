@@ -6,7 +6,17 @@ class BookingsController < ApplicationController
   def accept
     skip_authorization
     @booking = Booking.find(params[:booking_id])
-    @booking.accepted!
+    if @booking.accepted!
+      unless @booking.customer.helpies < 0
+       @customer = @booking.customer
+       @customer.helpies -= @booking.service.helpies
+       @customer.save
+
+       @user = @booking.service.user
+       @user.helpies += @booking.service.helpies
+       @user.save
+      end
+    end
     redirect_to(dashboard_path(anchor: "I#{rand(10)}")) and return
   end
 
@@ -29,13 +39,17 @@ class BookingsController < ApplicationController
 
   def create
     skip_authorization
-    @booking = Booking.new(booking_params)
-    @booking.customer = current_user
-    @booking.service = Service.find(params[:service_id])
-      if @booking.save
-        redirect_to service_path(@booking.service), notice: "Your request has been sent!"
-      else
-        redirect_to service_path(@booking.service), alert: "Please fill out all fields"
+    if current_user.helpies < @booking.service.helpies
+      redirect_to service_path(@booking.service), alert: "You don't have enough helpies!"
+    else
+      @booking = Booking.new(booking_params)
+      @booking.customer = current_user
+      @booking.service = Service.find(params[:service_id])
+        if @booking.save
+          redirect_to service_path(@booking.service), notice: "Your request has been sent!"
+        else
+          redirect_to service_path(@booking.service), alert: "Please fill out all fields"
+        end
     end
   end
 
