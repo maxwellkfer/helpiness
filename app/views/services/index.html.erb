@@ -5,21 +5,6 @@
       <%= render "search_form" %>
     </div>
   </div>
-  <div class="cards">
-    <div class="row">
-      <% @services.each do |service| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= link_to service_path(service) do %>
-        <div class="service-card">
-          <%= cl_image_tag(service.photo, width: 200, height: 150, crop: :fill, class: "card-img") %>
-          <div class="card-category"><%= service.category.name %></div>
-          <div class="card-description"><%= service.description.truncate_words(10) %></div>
-          <div class="card-name"><%= service.name %></div>
-          <div class="card-price"><%= service.helpies %> €</div>
-        </div>
-        <% end %>
-      </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render "shared/card"%>
 </div>
+

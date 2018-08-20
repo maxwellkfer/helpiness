@@ -18,4 +18,13 @@ class Service < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
+  def photo_or_default
+    if photo_url
+      photo_url
+    else
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=349f0586d07c10fdf29da504276b5407&auto=format&fit=crop&w=2100&q=80"
+    end
+  end
 end
+

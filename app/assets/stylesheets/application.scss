@@ -14,4 +14,13 @@
 @import "components/index";
 @import "components/banner";
 @import "components/button";
+@import "components/footer";
+@import "components/navbar";
+@import "components/helpies-card";
 @import "pages/index";
+@import "pages/dashboard";
+
+
+.wrapper {
+  min-height: 100vh;
+}

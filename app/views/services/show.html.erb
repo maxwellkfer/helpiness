@@ -1,39 +1,43 @@
+
+<div class="show-banner" style="background-image: url('<%= @service.photo_or_default %>')">
+            <!-- <div class="show-banner-price">
+              <h3><%= @service.helpies %> <i class="far fa-hand-paper"></i></h3>
+            </div> -->
+          </div>
+
 <div class="container">
-  <div class="row-intro">
-    <div class="col-xs-8">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
 
       <h1><%= @service.name.capitalize %></h1>
-    </div>
-    <div class="col-xs-1 col-xs-offset-2">
-      <form method="post" action="/services/<%= @service.id %>/bookings">
+
+        
+         <form method="post" action="/services/<%= @service.id %>/bookings">
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <input value="Book" placeholder="Book" type="submit" name = "booking[status]" />
         </form>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-8">
-        <% if @service.photo_url %>
-        <% photo = cl_image_path(@service.photo_url) %>
-        <% else %>
-        <% photo = "https://tse2.mm.bing.net/th?id=OIP.--WIa0qH3fLeoTo2E7uHigHaE8&pid=Api" %>
-        <% end %>
-        <div class="col-xs-12">
 
-          <div class="show-banner" style="background-image: url('<%= photo %>')">
-            <div class="show-banner-price">
-              <h3><%= @service.helpies %> <i class="far fa-hand-paper"></i></div></h3>
-            </div>
-          </div>
+
+        <button type="submit" class="btn btn-info trigger-btn" data-toggle="modal" data-target="#exampleModal" name = "booking[status]">
+          Book
+        </button>
+
+        <div class="descript">
+          <p><%= @service.description%></p>
+
         </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <h1>Posted by :</h1>
+      <div class="postuser">
+        <h4><%= @service.user.first_name.capitalize %></h4>
+        <p><%= @service.user.hobby %></p>
+        <p><%= @service.user.field %></p>
       </div>
-    </div>
-  </div>
-  <div class="col-xs-12">
-    <div class="service-show-description">
-      <p><%= @service.description%></p>
-      <p>The quiet and stillness of the North. The smell of the forest or a salty breeze on your skin. From the vast landscape of the Prairies, to the West Coastal Islands. Unique experiences for you to slow down, restore & reconnect. Incite personal transformation, inspiration & creativity. A deeper connection to nature, yourself & your intuition. Practice yoga, meditation & breath work. We offer a variety of customized retreats & workshops. Join a current offering or reach out to us about a personalized experience for you or your group. Learn daily practices and tools & find balance and renewal. Shift your perspective, to get back to yourself, and live with intention.
 
-      </p>
-    </div>
-  </div>
 
+    </div>
+
+  </div>
+</div>

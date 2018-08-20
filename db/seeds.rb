@@ -23,7 +23,6 @@ DESCRIPTION = [""]
   Category.create({name: category})
 end
 
-uni = University.create name: 'Durham'
 
 20.times do
 

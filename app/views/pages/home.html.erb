@@ -13,7 +13,7 @@
     <br>
 
     <% if user_signed_in? %>
-    <%= render "services/search_form" %>
+    <a href="/services" class="btn-yours">Find a service !</a>
     <% else %>
     <a href="/accounts/sign_up" class="btn-yours">Come in !</a>
     <% end %>
@@ -29,27 +29,27 @@
     <div class="cards">
       <div class="row">
 
-          <div class="col-xs-12 col-sm-4">
+          <div class="col-xs-12 col-lg-4">
           <div class="testimonial-card">
 
             <div class="card-logo"><%= image_tag "Users.svg", width: 50 %></div>
             <div class="card-mec">A community</div>
-            <div class="card-cont">A place to help each other through services.</div>
+            <div class="card-cont">A place to help each other through the exchange of services.</div>
           </div>
 
           </div>
 
-          <div class="col-xs-12 col-sm-4">
+          <div class="col-xs-12 col-lg-4">
           <div class="testimonial-card">
 
             <div class="card-logo"><%= image_tag "Share.svg", width: 50 %></div>
             <div class="card-mec">For services</div>
-            <div class="card-cont">Book easily any kind of services : tutoring, manual labor...</div>
+            <div class="card-cont">Easily book any kind of service : tutoring, manual labour...</div>
           </div>
 
           </div>
 
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-lg-4">
           <div class="testimonial-card">
 
             <div class="card-logo"><%= image_tag "Mastercard.svg", width: 50 %></div>
@@ -97,7 +97,7 @@
 
             <div class="card-logo"><%= image_tag "Download.svg", width: 50 %></div>
             <div class="card-mec">Book a service</div>
-            <div class="card-cont">Spend your Helpies <i class="far fa-hand-paper"></i> on whatever you want.</div>
+            <div class="card-cont">Spend your Helpies <i class="far fa-hand-paper"></i> on any service that's on offer.</div>
           </div>
 
           </div>
@@ -108,10 +108,8 @@
   <div class="lien">
     <a href="/accounts/sign_up" class="btn btn-info">Let's start</a>
   </div>
-
-
-
-
   </div>
-
 </div>
+
+
+
