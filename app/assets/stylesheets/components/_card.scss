@@ -13,6 +13,37 @@
   transition: box-shadow 0.3s ease;
   }
 
+  .profile-card h1 {
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    color: #f9cb5a;
+  }
+
+  .yourprofile {
+    position: absolute;
+    top: 55px;
+    left: 310px;
+
+  }
+
+  .profile-avatar {
+    position: absolute;
+    top: 55px;
+    left: 50px;
+  }
+
+  .profile-helpies {
+    position: absolute;
+    top: 55px;
+    right: 20px;
+  }
+
+  .profile-text {
+    position: absolute;
+    top: 250px;
+    left: 50px;
+  }
+
 
 
 .service-card {
