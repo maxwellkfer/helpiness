@@ -13,7 +13,7 @@
     <br>
 
     <% if user_signed_in? %>
-    <%= render "services/search_form" %>
+    <a href="/services" class="btn-yours">Find a service !</a>
     <% else %>
     <a href="/accounts/sign_up" class="btn-yours">Come in !</a>
     <% end %>

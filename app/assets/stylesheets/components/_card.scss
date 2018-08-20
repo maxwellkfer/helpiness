@@ -1,3 +1,20 @@
+.profile-card {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vh;
+  height: 600px;
+  margin: 20px auto;
+  border-radius: 10px;
+  background: #fafafa;
+  box-shadow: 3px 3px 10px #c8c8c8;
+  transition: box-shadow 0.3s ease;
+  }
+
+
+
 .service-card {
   display: flex;
   position: relative;
