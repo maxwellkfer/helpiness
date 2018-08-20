@@ -31,7 +31,8 @@ uni = University.create name: 'Durham'
   first_name: NAMES.sample,
   email: Faker::Internet.email,
   password: "asdfgh",
-  university_id: uni.id
+  university_id: uni.id,
+  helpies: 100
   )
 
  user.save!
@@ -55,7 +56,8 @@ end
   first_name: NAMES.sample,
   email: Faker::Internet.email,
   password: "asdfgh",
-  university_id: uni.id
+  university_id: uni.id,
+  helpies: 100
  )
 
  customer.save
