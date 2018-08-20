@@ -4,23 +4,26 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to @booking.service
+      respond_to do |format|
+        format.html { redirect_to service_path(@service) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render 'services/show'
+      respond_to do |format|
+        format.html { render 'services/show' }
+        format.js
     end
   end
-  def edit
-    # we dont want to redirct to another page to make edits, using ajax to make edits on the page
-  end
-  def update
-    # the only person that should be able to edit the review is Admin and the person who created it
-  end
+
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
     @review.user = current_user
     # the only person that should be able to delete the review is Admin and the person who created it
   end
+
+  private
+
   def review_params
     params.require(:review).permit(:comments, :stars)
   end
