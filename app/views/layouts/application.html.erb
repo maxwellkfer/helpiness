@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
+  <div class="wrapper">
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
@@ -19,8 +20,13 @@
     <%= javascript_pack_tag 'application' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
 
-    <%= render 'shared/footer' %>
+
 
     <%= yield(:body_js) %>
+
   </body>
+</div>
+<%= render 'shared/footer' %>
+
 </html>
+
