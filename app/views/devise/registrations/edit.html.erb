@@ -18,7 +18,7 @@
 
         <%= f.input :field, label: "What do you study ?" %>
         <%= f.input :hobby, label: "What are your hobbies and activities you practice ?" %>
-        <%=  collection_select(:post, :university_id, University.all, :id, :name,
+        <%= f.collection_select(:university_id, University.all, :id, :name,
     {}, class: "select2") %>
 
         <%= f.input :email, required: true, autofocus: true %>
