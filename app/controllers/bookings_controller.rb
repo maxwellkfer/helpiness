@@ -39,8 +39,9 @@ class BookingsController < ApplicationController
 
   def create
     skip_authorization
-    if current_user.helpies < @booking.service.helpies
-      redirect_to service_path(@booking.service), alert: "You don't have enough helpies!"
+    @service = Service.find(params[:service_id])
+    if current_user.helpies < @service.helpies
+      redirect_to service_path(@service), alert: "You don't have enough helpies!"
     else
       @booking = Booking.new(booking_params)
       @booking.customer = current_user
