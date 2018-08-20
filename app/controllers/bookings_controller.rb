@@ -1,14 +1,13 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
-
   end
 
   def accept
     skip_authorization
     @booking = Booking.find(params[:booking_id])
     @booking.accepted!
-    redirect_to dashboard_path(anchor:'/dashboard#requests')
+    redirect_to(dashboard_path(anchor: "I#{rand(10)}")) and return
   end
 
 
@@ -17,7 +16,7 @@ class BookingsController < ApplicationController
     skip_authorization
     @booking = Booking.find(params[:booking_id])
     @booking.declined!
-    redirect_to dashboard_path(anchor:'/dashboard#requests')
+    redirect_to dashboard_path(anchor: "/dashboard#requests")
   end
 
   def show
