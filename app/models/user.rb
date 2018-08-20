@@ -19,10 +19,10 @@ before_save :default_values
   end
 
   def avatar_or_default
-    if avatar
-      avatar
+    if avatar_url
+      avatar_url
     else
-      avatar_url "background.jpg"
+      "background.jpg"
     end
   end
 
