@@ -33,7 +33,7 @@
         <p>Your university is : <%= current_user.university&.name %></p>
         <p>You have <%= current_user.helpies %> Helpies.</p>
         <div class="avatardash">
-          <%= image_tag current_user.avatar_or_default %>
+          <%= image_tag current_user.avatar_or_default, :style=>"width:75px; height:75px; border-radius:50%" %>
         </div>
       </div>
 
