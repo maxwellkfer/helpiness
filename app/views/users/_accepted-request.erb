@@ -1,12 +1,32 @@
 <div class="cards">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <% @services.each do |service| %>
-      <% Booking.where(service: service, status: "accepted").each do |accepted| %>
-      <h1><%= service.name %></h1>
-      <h3><%= accepted.customer.first_name%></h3>
-      <% end %>
-      <% end %>
+  <% @services.each do |service| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+        <% unless service.bookings.where(status: :accepted).empty? %>
+          <h2><%= service.name %></h2>
+        <% end %>
+        <% Booking.where(service: service, status: :accepted).each do |accepted| %>
+          <div class="test">
+            <div class="row">
+              <div class="col-sm-2">
+                <%= cl_image_tag("#") %>
+              </div>
+              <div class="col-sm-2">
+                <h4><%= accepted.customer.first_name%></h4>
+              </div>
+              <div class="col-sm-2">
+                <%= time_ago_in_words(accepted.created_at) + ' ago' %>
+              </div>
+              <div class="col-sm-2">
+                <%= 'university placeholder' %>
+              </div>
+              <div class="col-sm-4">
+                <%= accepted.customer.email %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

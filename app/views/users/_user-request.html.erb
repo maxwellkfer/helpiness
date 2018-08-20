@@ -1,14 +1,32 @@
 <div class="cards">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <% @services.each do |service| %>
-      <% Booking.where(service: service, status: "pending").each do |booking| %>
-      <h1><%= service.name %></h1>
-      <h3><%= booking.customer.first_name%></h3>
-      <h5><%=link_to "Accept", service_booking_accept_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'} %></h5>
-      <h5><%=link_to "Decline", service_booking_decline_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'} %></h5>
-      <% end %>
-      <% end %>
-    </div>
+  <% @services.each do |service| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+        <% unless service.bookings.where(status: :pending).empty? %>
+          <h2><%= service.name %></h2>
+        <% end %>
+        <% Booking.where(service: service, status: "pending").each do |booking| %>
+  <div class="test">
+        <div class="row">
+          <div class="col-sm-2">
+            <h4><%= booking.customer.first_name%></h4>
+          </div>
+          <div class="col-sm-2">
+            <%= time_ago_in_words(booking.created_at) + ' ago' %>
+          </div>
+          <div class="col-sm-8">
+            <h5><%=link_to "Accept", service_booking_accept_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-success" %></h5>
+            <a href='#I<%= booking.id %>' target="_blank/">
+            <h5><%=link_to "Decline", service_booking_decline_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %></h5>
+          </div>
+        </div>
   </div>
+
+        <% end %>
+
+      </div>
+    </div>
+  <% end %>
+
+
 </div>
