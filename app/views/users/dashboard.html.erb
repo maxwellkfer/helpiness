@@ -1,7 +1,8 @@
 <div id="wrapper">
   <div id="header">
-  </div>
     <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name&.capitalize %></h1>
+  </div>
+
 
   <div class="container">
     <ul class= "nav nav-tabs" role="tablist">
@@ -27,71 +28,69 @@
     </ul>
 
 
-  <div class="tab-content">
-    <div class="tab-pane fade in active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <div class="profile-card">
-        <div class="yourprofile">
-          <h1>Your profile</h1>
-        </div>
-          <div class="your-profile-helpies">
-          <h5>You have <%= current_user.helpies %> Helpies.</h5>
-        </div>
-        <div class="profile-text">
-          <p>My name is <%= current_user.first_name.capitalize %>, I study <%= current_user.field.downcase %> and I love <%= current_user.hobby.downcase %>.</p>
-          <% unless current_user.university.nil? %>
-          <p>I am a student at <%= current_user.university.name %>.</p>
-          <%end%>
-          <p>So far, I've helped <%= current_user.services.count %>
-            <% unless current_user.services.count == 1 %>people !
-          <% else %>person !</p>
-          <%end%>
+    <div class="tab-content">
+      <div class="tab-pane fade in active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="profile-card">
+          <div class="yourprofile">
+            <h1>Your profile</h1>
+          </div>
+            <div class="your-profile-helpies">
+            <h5>You have <%= current_user.helpies %> Helpies.</h5>
+          </div>
 
-        </div>
-        <div class="profile-helpies">
-          <%= render 'shared/helpies-card'%>
-        </div>
-        <div class="profile-avatar">
-          <% if current_user.avatar? %>
-            <%= image_tag current_user.avatar.url(:bright_face), class: "img-circle" %>
-          <% else %>
-            <%= image_tag "helpster.png", class: "profile-hipster" %>
-          <%end%>
+          <div class="profile-text">
+            <p>My name is <%= current_user.first_name.capitalize %>, I study <%= current_user.field.downcase %> and I love <%= current_user.hobby.downcase %>.</p>
+            <% unless current_user.university.nil? %>
+              <p>I am a student at <%= current_user.university.name %>.</p>
+            <%end%>
+            <p>So far, I've helped <%= current_user.services.count %>
+            <% unless current_user.services.count == 1 %>people !
+            <% else %>person !</p>
+            <%end%>
+          </div>
+
+          <div class="profile-helpies">
+            <%= render 'shared/helpies-card'%>
+          </div>
+
+          <div class="profile-avatar">
+            <% if current_user.avatar? %>
+              <%= image_tag current_user.avatar.url(:bright_face), class: "img-circle" %>
+            <% else %>
+              <%= image_tag "helpster.png", class: "profile-hipster" %>
+            <%end%>
+          </div>
         </div>
       </div>
 
-    </div>
 
+      <div class="tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <%if current_user.services %>
+              <%= render 'shared/card', services: @services %>
+            <%else%>
+              <p>You aren't offering any services yet</p>
+            <%end%>
+          </div>
+        </div>
+      </div>
 
-    <div class="tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-
-        <p><%if current_user.services %></p>
-        <%= render 'shared/card', services: @services %>
+      <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
+        <%if current_user.services %>
+          <%= render 'user-request'%>
         <%else%>
-        <p>You aren't offering any services yet</p>
+          <p>You aren't offering any services yet</p>
+        <%end%>
+      </div>
+
+      <div class="tab-pane fade" id="accepted-requests" role="tabpanel" aria-labelledby="accepted-requests-tab">
+        <%if current_user.services %>
+          <%= render 'accepted-request'%>
+        <% else %>
+          <p>You have no request</p>
         <%end%>
       </div>
     </div>
-    </div>
-
-    <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
-      <p><%if current_user.services %></p>
-            <%= render 'user-request'%>
-          <%else%>
-            <p>You aren't offering any services yet</p>
-          <%end%></p>
-    </div>
-
-    <div class="tab-pane fade" id="accepted-requests" role="tabpanel" aria-labelledby="accepted-requests-tab">
-      <p><%if current_user.services %></p>
-            <%= render 'accepted-request'%>
-          <%else%>
-            <p>You have no request</p>
-          <%end%></p>
-    </div>
   </div>
-   </div>
 </div>
-
-
