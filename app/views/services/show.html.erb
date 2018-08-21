@@ -60,11 +60,8 @@
         <h4>My name is <%= @service.user.first_name.capitalize %>, I study <%= @service.user.field.downcase %> and I love <%= @service.user.hobby.downcase %> !</h4>
 
       </div>
-service_booking_reviews
-/services/:service_id/bookings/:booking_id/reviews
 
     </div>
-   <%= render 'reviews/form', service: @service, review: @review %>
   </div>
 
   <div class="show-cat">
