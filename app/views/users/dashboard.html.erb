@@ -34,8 +34,8 @@
           <h1>Your profile</h1>
         </div>
         <div class="profile-text">
-          <p>Your hobby : <%= current_user.hobby %></p>
-          <p>You currently study : <%= current_user.field %></p>
+          <p>Your hobby : <%= current_user.hobby& %></p>
+          <p>You currently study : <%= current_user.field& %></p>
           <p>Your university is : <%= current_user.university&.name %></p>
         </div>
         <div class="profile-helpies">
@@ -59,7 +59,7 @@
       <div class="col-xs-12 col-sm-6 col-md-3">
 
         <p><%if current_user.services %></p>
-        <%= render 'shared/card'%>
+        <%= render 'shared/card', services: @services %>
         <%else%>
         <p>You aren't offering any services yet</p>
         <%end%>

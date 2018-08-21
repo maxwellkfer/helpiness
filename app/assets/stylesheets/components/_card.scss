@@ -1,3 +1,48 @@
+.show-cat h1 {
+  margin-top: 150px;
+  font-size: 36px;
+}
+
+.show-description {
+  margin: 50px;
+  }
+
+.show-card {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 330px;
+  height: 250px;
+  margin: 20px auto;
+  }
+
+.show-request {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+
+.show-message {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.show-avatar {
+  position: absolute;
+  top: 80px;
+  left: 160px;
+}
+
+.show-about h3 {
+  position: absolute;
+  top: 140px;
+  left: 0px;
+  color: #f9cb5a;
+}
+
 .profile-card {
   display: flex;
   position: relative;
@@ -174,7 +219,6 @@
 .lien {
   text-align: center;
   margin-bottom: 100px;
-  font-size: 60px;
 }
 
 .descript {
@@ -182,7 +226,8 @@
 }
 
 .postuser {
-  text-align: center;
+  text-align: left;
+  margin: 20px;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
