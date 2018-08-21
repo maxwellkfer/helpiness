@@ -24,9 +24,18 @@ end
 
 
 
-
+ user = User.new(
+  first_name: NAMES.sample,
+  email: Faker::Internet.email,
+  password: "asdfgh",
+  university_id: University.create(name: "Stanford"),
+  helpies: 100,
+  field: 'Math',
+  hobby: "Guitar"
+  )
 
 # 20.times do
+
 
 #  user = User.new(
 #   first_name: NAMES.sample,
@@ -62,6 +71,18 @@ end
 
 #  customer.save
 
+
+20.times do
+ customer = User.new(
+  first_name: NAMES.sample,
+  email: Faker::Internet.email,
+  password: "asdfgh",
+  university_id: University.create(name: "Stanford"),
+  helpies: 100,
+  field: "Math",
+  hobby: "Guitar"
+ )
+ 
 #  20.times do
 #   Booking.create(
 #    service: Service.all.sample,
