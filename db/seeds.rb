@@ -1,8 +1,6 @@
-Booking.destroy_all
+# Booking.destroy_all
 Service.destroy_all
-User.destroy_all
-Category.destroy_all
-University.destroy_all
+# Category.destroy_all
 
 NAMES = ["Augusto Menezes", "Antelmo Bandeira", "Dinis Roque", "Vicente Pascoal",
 
@@ -19,12 +17,10 @@ NAMES = ["Augusto Menezes", "Antelmo Bandeira", "Dinis Roque", "Vicente Pascoal"
  "Wilbert Orourke", "Mohammad Morales", "Malorie Klapper", "Jeniffer Obrian", "Judy Dejean"]
 DESCRIPTION = [""]
 
-["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
-  Category.create({name: category})
-end
 
-
-20.times do
+# ["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
+#   Category.create({name: category})
+# end
 
  user = User.new(
   first_name: NAMES.sample,
@@ -36,20 +32,41 @@ end
   hobby: "Guitar"
   )
 
- user.save!
+# 20.times do
 
- 5.times do
+
+#  user = User.new(
+#   first_name: NAMES.sample,
+#   email: Faker::Internet.email,
+#   password: "asdfgh",
+#   university_id: uni.id,
+#   helpies: 100
+#   )
+
+#  user.save!
+
+ 50.times do
   Service.create(
     name: Faker::Job.field,
-    description: "smsmmsm",
-    helpies: rand(1...500),
+    description: "As a yoga student yourself, you are well aware that everyone spaces out in class once in a while. Truthfully, whose eyes don't glaze over after 90 minutes of impersonal and generalized instructions? Make your teaching more skillful and intimate by using your students' names. Instead of repeating the same tired instructions, really look at your students, and help them clarify, expand, or deepen their poses by relating to them directly.",
+    helpies: rand(20...200),
     category: Category.all.sample,
-    user: user
+    photo: "https://source.unsplash.com/random",
+    user: "Bob"
     )
  end
 
-end
 
+# 20.times do
+#  customer = User.new(
+#   first_name: NAMES.sample,
+#   email: Faker::Internet.email,
+#   password: "asdfgh",
+#   university_id: uni.id,
+#   helpies: 100
+#  )
+
+#  customer.save
 
 
 20.times do
@@ -62,14 +79,21 @@ end
   field: "Math",
   hobby: "Guitar"
  )
+ 
+#  20.times do
+#   Booking.create(
+#    service: Service.all.sample,
+#    customer: customer
+#   )
+#  end
 
- customer.save
 
- 20.times do
-  Booking.create(
-   service: Service.all.sample,
-   customer: customer
-  )
- end
 
 end
+
+["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
+  Category.create({name: category})
+
+end
+
+

@@ -11,12 +11,13 @@
 
       <div class="show-description">
         <div class="row">
-          <div class="col-md-6"><h1><%= @service.name.capitalize %></h1>
+          <div class="col-md-6 align-left"><h1><%= @service.name.capitalize %></h1>
           </div>
-          <div class="col-md-6"><h1><%= @service.helpies%> <i class="far fa-hand-paper"></i></h1>
+          <div class="col-md-6 align-right"><h2><%= @service.helpies%> <i class="far fa-hand-paper"></i></h2>
         </div>
 
         </div>
+        <br><br>
 
         <h3>About my service</h3>
         <br>
@@ -45,9 +46,9 @@
             <% end %>
           </div>
           <div class="show-avatar">
-            <div class="profile-avatar">
+            <div class="profile-avatar img-circle">
               <% if current_user.avatar? %>
-                <%= image_tag current_user.avatar.url(:show_face) %>
+                <%= image_tag current_user.avatar.url(:show_face), class: "img-circle" %>
               <% else %>
                 <%= image_tag "helpster.png", class: "profile-hipster"%>
               <%end%>
@@ -62,7 +63,9 @@
       <div class="postuser">
 
 
-        <h4>My name is <%= @service.user.first_name.capitalize %>, I study <%= @service.user.field.downcase %> and I love <%= @service.user.hobby.downcase %> !</h4>
+        <p>My name is <%= @service.user.first_name.capitalize %>, I study <%= @service.user.field.downcase %> and I love <%= @service.user.hobby.downcase %>.</p>
+        <p>I am a student at <%= @service.user.university.name %>.</p>
+        <p>So far, I helped <%= @service.user.services.count %> people !</p>
 
       </div>
 
