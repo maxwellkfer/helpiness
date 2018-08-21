@@ -11,11 +11,15 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :services do
-    resources :bookings do
+    resources :bookings, except: [:destroy] do
       patch "/accept", to: "bookings#accept"
       patch "/decline", to: "bookings#decline"
+      patch "/completed", to: "bookings#completed"
     end
   end
+
+  resources :bookings, only: [:destroy]
+
 
   get "dashboard", to: 'users#dashboard', as: 'dashboard'
 

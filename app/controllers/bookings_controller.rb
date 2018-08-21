@@ -29,6 +29,13 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path(anchor: "/dashboard#requests")
   end
 
+  def completed
+    skip_authorization
+    @booking = Booking.find(params[:booking_id])
+    @booking.completed!
+    redirect_to dashboard_path(anchor: "/dashboard#accepted-requests")
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -67,7 +74,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_path(anchor: "/dashboard#accepted-requests")
   end
 
   private

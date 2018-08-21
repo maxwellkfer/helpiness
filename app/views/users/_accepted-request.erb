@@ -8,7 +8,7 @@
         <% Booking.where(service: service, status: :accepted).each do |accepted| %>
           <div class="test">
             <div class="row">
-              <div class="col-sm-2">
+              <div class="col-sm-1">
                 <%= cl_image_tag("#") %>
               </div>
               <div class="col-sm-2">
@@ -20,8 +20,11 @@
               <div class="col-sm-2">
                 <%= 'university placeholder' %>
               </div>
-              <div class="col-sm-4">
+              <div class="col-sm-3">
                 <%= accepted.customer.email %>
+              </div>
+              <div class="col-sm-2">
+                <h5><%=link_to "Completed", service_booking_completed_path(service, accepted), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %></h5>
               </div>
             </div>
           </div>
