@@ -30,8 +30,10 @@ end
   first_name: NAMES.sample,
   email: Faker::Internet.email,
   password: "asdfgh",
-  university_id: uni.id,
-  helpies: 100
+  university_id: University.create(name: "Stanford"),
+  helpies: 100,
+  field: 'Math',
+  hobby: "Guitar"
   )
 
  user.save!
@@ -55,8 +57,10 @@ end
   first_name: NAMES.sample,
   email: Faker::Internet.email,
   password: "asdfgh",
-  university_id: uni.id,
-  helpies: 100
+  university_id: University.create(name: "Stanford"),
+  helpies: 100,
+  field: "Math",
+  hobby: "Guitar"
  )
 
  customer.save
