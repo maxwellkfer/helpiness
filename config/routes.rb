@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :categories
+
   resources :bookings, only: [:destroy]
+
 
 
   get "dashboard", to: 'users#dashboard', as: 'dashboard'

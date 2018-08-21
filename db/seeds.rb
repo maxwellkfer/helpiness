@@ -17,9 +17,11 @@ NAMES = ["Augusto Menezes", "Antelmo Bandeira", "Dinis Roque", "Vicente Pascoal"
  "Wilbert Orourke", "Mohammad Morales", "Malorie Klapper", "Jeniffer Obrian", "Judy Dejean"]
 DESCRIPTION = [""]
 
+
 # ["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
 #   Category.create({name: category})
 # end
+
 
 
 # 20.times do
@@ -45,9 +47,6 @@ DESCRIPTION = [""]
     )
  end
 
-# end
-
-
 
 # 20.times do
 #  customer = User.new(
@@ -67,4 +66,12 @@ DESCRIPTION = [""]
 #   )
 #  end
 
-# end
+
+end
+
+["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
+  Category.create({name: category})
+
+end
+
+
