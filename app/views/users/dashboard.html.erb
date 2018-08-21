@@ -38,8 +38,13 @@
         </div>
         <div class="profile-text">
           <p>My name is <%= current_user.first_name.capitalize %>, I study <%= current_user.field.downcase %> and I love <%= current_user.hobby.downcase %>.</p>
+          <% unless current_user.university.nil? %>
           <p>I am a student at <%= current_user.university.name %>.</p>
-          <p>So far, I helped <%= current_user.services.count %> people !</p>
+          <%end%>
+          <p>So far, I've helped <%= current_user.services.count %>
+            <% unless current_user.services.count == 1 %>people !
+          <% else %>person !</p>
+          <%end%>
 
         </div>
         <div class="profile-helpies">
