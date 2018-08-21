@@ -14,13 +14,15 @@ class MessagesController < ApplicationController
      @over_ten = false
      @messages = @conversation.messages
     end
-    if @messages.last
+
+   if @messages.last
       if @messages.last.user_id != current_user.id
         @messages.last.read = true;
       end
-    end
     @message = @conversation.messages.new
   end
+   end
+
 
   def new
     skip_authorization
@@ -29,10 +31,11 @@ class MessagesController < ApplicationController
 
   def create
     skip_authorization
-   @message = @conversation.messages.new(message_params)
-   skip_policy_scope
-   if @message.save
-    redirect_to conversation_messages_path(@conversation)
+
+     @message = @conversation.messages.new(message_params)
+     skip_policy_scope
+     if @message.save
+      redirect_to conversation_messages_path(@conversation)
    end
   end
 

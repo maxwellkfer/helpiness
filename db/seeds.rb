@@ -1,6 +1,6 @@
-# Booking.destroy_all
+Booking.destroy_all
 Service.destroy_all
-# Category.destroy_all
+Category.destroy_all
 
 NAMES = ["Augusto Menezes", "Antelmo Bandeira", "Dinis Roque", "Vicente Pascoal",
 
@@ -18,9 +18,11 @@ NAMES = ["Augusto Menezes", "Antelmo Bandeira", "Dinis Roque", "Vicente Pascoal"
 DESCRIPTION = [""]
 
 
-# ["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
-#   Category.create({name: category})
-# end
+["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
+  Category.create({name: category})
+end
+
+
 
  user = User.new(
   first_name: NAMES.sample,
@@ -45,15 +47,16 @@ DESCRIPTION = [""]
 
 #  user.save!
 
- 50.times do
-  Service.create(
+50.times do
+  Service.create!(
     name: Faker::Job.field,
     description: "As a yoga student yourself, you are well aware that everyone spaces out in class once in a while. Truthfully, whose eyes don't glaze over after 90 minutes of impersonal and generalized instructions? Make your teaching more skillful and intimate by using your students' names. Instead of repeating the same tired instructions, really look at your students, and help them clarify, expand, or deepen their poses by relating to them directly.",
     helpies: rand(20...200),
-    category: Category.all.sample,
-    photo: "https://source.unsplash.com/random",
-    user: "Bob"
+    category: Category.find_by_name('Tutoring'),
+    remote_photo_url: "https://source.unsplash.com/random",
+    user: User.find_by_first_name('bob')
     )
+  puts Service.last.photo
  end
 
 
@@ -88,8 +91,6 @@ DESCRIPTION = [""]
 #  end
 
 
-
-end
 
 ["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
   Category.create({name: category})

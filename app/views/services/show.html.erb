@@ -30,11 +30,13 @@
     <div class="col-xs-12 col-sm-4">
 
         <div class="show-card">
-          <div class="show-message">
-            <%  %>
+
+          <%  %>
             <% if current_user != @service.user %>
             <%= link_to 'Write me', conversations_path(sender_id: current_user.id, recipient_id: @service.user.id), method: 'post', class: "btn btn-info" %>
             <% end %>
+            <%= link_to "Write me", "#", class: "btn btn-info" %>
+
           </div>
           <div class="show-request">
             <% if current_user != @service.user %>
@@ -61,6 +63,8 @@
 
       <div class="postuser">
         <p>My name is <%= @service.user.first_name.capitalize %>, I study <%= @service.user.field.downcase %> and I love <%= @service.user.hobby.downcase %>.</p>
+
+
         <% unless current_user.university.nil? %>
           <p>I am a student at <%= current_user.university.name %>.</p>
         <%end%>
@@ -68,6 +72,7 @@
         <% unless current_user.services.count == 1 %>people !
         <% else %>person !</p>
         <%end%>
+
       </div>
 
     </div>
