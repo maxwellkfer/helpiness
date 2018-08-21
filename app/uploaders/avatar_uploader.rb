@@ -12,7 +12,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   version :bright_face do
     cloudinary_transformation radius: 100,
-      width: 150, height: 150, crop: :thumb, gravity: :face
+      width: 120, height: 120, crop: :thumb, gravity: :face
   end
 
   version :show_face do
