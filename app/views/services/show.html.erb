@@ -11,15 +11,14 @@
 
       <h1><%= @service.name.capitalize %></h1>
 
-
-         <form method="post" action="/services/<%= @service.id %>/bookings">
+        <form method="post" action="/services/<%= @service.id %>/bookings">
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <input value="Book" placeholder="Book" type="submit" name = "booking[status]" />
         </form>
 
+
         <div class="descript">
           <p><%= @service.description%></p>
-
         </div>
     </div>
 
@@ -30,9 +29,10 @@
         <p><%= @service.user.hobby %></p>
         <p><%= @service.user.field %></p>
       </div>
-
+service_booking_reviews
+/services/:service_id/bookings/:booking_id/reviews
 
     </div>
-
+   <%= render 'reviews/form', service: @service, review: @review %>
   </div>
 </div>
