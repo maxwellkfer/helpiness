@@ -8,7 +8,8 @@ class ConversationsController < ApplicationController
    end
 
   def create
-    skip_policy_scope
+    skip_authorization
+
    if Conversation.between(params[:sender_id],params[:recipient_id])
      .present?
       @conversation = Conversation.between(params[:sender_id],

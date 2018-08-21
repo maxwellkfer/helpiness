@@ -4,7 +4,6 @@ class MessagesController < ApplicationController
     end
 
   def index
-
     skip_policy_scope
     @messages = @conversation.messages
     if @messages.length > 10
@@ -15,20 +14,21 @@ class MessagesController < ApplicationController
      @over_ten = false
      @messages = @conversation.messages
     end
-   if @messages.last
-    if @messages.last.user_id != current_user.id
-     @messages.last.read = true;
+    if @messages.last
+      if @messages.last.user_id != current_user.id
+        @messages.last.read = true;
+      end
     end
-   end
-  @message = @conversation.messages.new
-   end
+    @message = @conversation.messages.new
+  end
 
   def new
-    skip_policy_scope
-   @message = @conversation.messages.new
+    skip_authorization
+    @message = @conversation.messages.new
   end
 
   def create
+    skip_authorization
    @message = @conversation.messages.new(message_params)
    skip_policy_scope
    if @message.save
