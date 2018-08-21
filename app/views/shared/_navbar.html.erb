@@ -53,9 +53,9 @@
         <% if user_signed_in? %>
 
 
-          <li><%= link_to "Create", "#", class: "navbar-helpiness-item navbar-helpiness-link" %></li>
-          <li><%= link_to "Services", "#", class: "navbar-helpiness-item navbar-helpiness-link" %></li>
-          <li><%= link_to "Messages", "#", class: "navbar-helpiness-item navbar-helpiness-link" %></li>
+          <li><%= link_to "Create", new_service_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
+          <li><%= link_to "Services", services_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
+          <li><%= link_to "Messages", conversations_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
 
         <% else %>
 
