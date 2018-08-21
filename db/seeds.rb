@@ -54,7 +54,7 @@ end
     helpies: rand(20...200),
     category: Category.find_by_name('Tutoring'),
     remote_photo_url: "https://source.unsplash.com/random",
-    user: User.find_by_first_name('bob')
+    user: User.find_by_first_name('Antelmo Bandeira')
     )
   puts Service.last.photo
  end
@@ -82,7 +82,7 @@ end
   field: "Math",
   hobby: "Guitar"
  )
- 
+
 #  20.times do
 #   Booking.create(
 #    service: Service.all.sample,
