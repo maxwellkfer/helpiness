@@ -2,7 +2,7 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["Exchange a service for helpies,", "exchange your helpies for a service!"],
+    strings: ["Services for Helpies,", "Helpies for services !"],
     typeSpeed: 80,
     loop: true
   });
