@@ -37,9 +37,10 @@
           <h5>You have <%= current_user.helpies %> Helpies.</h5>
         </div>
         <div class="profile-text">
-          <p>Your hobby : <%= current_user.hobby %></p>
-          <p>You currently study : <%= current_user.field %></p>
-          <p>Your university is : <%= current_user.university&.name %></p>
+          <p>My name is <%= current_user.first_name.capitalize %>, I study <%= current_user.field.downcase %> and I love <%= current_user.hobby.downcase %>.</p>
+          <p>I am a student at <%= current_user.university.name %>.</p>
+          <p>So far, I helped <%= current_user.services.count %> people !</p>
+
         </div>
         <div class="profile-helpies">
           <%= render 'shared/helpies-card'%>
