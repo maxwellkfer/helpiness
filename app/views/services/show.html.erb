@@ -18,45 +18,38 @@
 
         </div>
         <br><br>
-
+      <div class="white-back-about">
         <h3>About my service</h3>
         <br>
         <div class="descript">
           <p><%= @service.description%></p>
         </div>
       </div>
+      </div>
     </div>
-
-
-
-
-
-
-
-
-
 
     <div class="col-xs-12 col-sm-4">
 
-        <div class="show-card">
-
-          <%  %>
+          <div class="show-card">
             <% if current_user != @service.user %>
-            <%= link_to 'Write me', conversations_path(sender_id: current_user.id, recipient_id: @service.user.id), method: 'post', class: "btn btn-info" %>
+            <%= link_to 'Write me', conversations_path(sender_id: current_user.id, recipient_id: @service.user.id), method: 'post', class: "btn btn-info show-message" %>
             <% end %>
-            <%= link_to "Write me", "#", class: "btn btn-info" %>
-
           </div>
+
           <div class="show-request">
             <% if current_user != @service.user %>
               <form method="post" action="/services/<%= @service.id %>/bookings">
                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                <input value="Request" class="btn btn-info trigger-btn" placeholder="Book" type="submit" name = "booking[status]" />
+                <input value="Request" class="btn btn-info trigger-btn show-request" placeholder="Book" type="submit" name = "booking[status]" />
               </form>
             <% end %>
           </div>
+
+          <div class="white-back-about-me">
+
+
           <div class="show-avatar">
-            <div class="profile-avatar img-circle">
+            <div class=" img-circle">
               <% if current_user.avatar? %>
                 <%= image_tag current_user.avatar.url(:show_face), class: "img-circle" %>
               <% else %>
@@ -66,8 +59,9 @@
           </div>
           <div class="show-about">
             <h3>About me</h3>
+            <br>
           </div>
-        </div>
+
 
 
       <div class="postuser">
@@ -83,6 +77,9 @@
         <%end%>
 
       </div>
+
+    </div>
+    </div>
 
     </div>
   </div>
