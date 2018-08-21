@@ -22,7 +22,6 @@
         <h3>About my service</h3>
         <br>
         <div class="descript">
-
           <p><%= @service.description%></p>
         </div>
       </div>
@@ -61,12 +60,14 @@
 
 
       <div class="postuser">
-
-
         <p>My name is <%= @service.user.first_name.capitalize %>, I study <%= @service.user.field.downcase %> and I love <%= @service.user.hobby.downcase %>.</p>
-        <p>I am a student at <%= @service.user.university.name %>.</p>
-        <p>So far, I helped <%= @service.user.services.count %> people !</p>
-
+        <% unless current_user.university.nil? %>
+          <p>I am a student at <%= current_user.university.name %>.</p>
+        <%end%>
+          <p>So far, I've helped <%= current_user.services.count %>
+        <% unless current_user.services.count == 1 %>people !
+        <% else %>person !</p>
+        <%end%>
       </div>
 
     </div>
