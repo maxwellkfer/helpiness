@@ -7,24 +7,25 @@
         <% end %>
         <% Booking.where(service: service, status: :accepted).each do |accepted| %>
           <div class="test">
-            <div class="row">
-              <div class="col-sm-1">
-                <%= cl_image_tag("#") %>
-              </div>
-              <div class="col-sm-2">
-                <h4><%= accepted.customer.first_name%></h4>
-              </div>
-              <div class="col-sm-2">
-                <%= time_ago_in_words(accepted.created_at) + ' ago' %>
-              </div>
-              <div class="col-sm-2">
-                <%= 'university placeholder' %>
-              </div>
-              <div class="col-sm-3">
-                <%= accepted.customer.email %>
-              </div>
-              <div class="col-sm-2">
-                <h5><%=link_to "Completed", service_booking_completed_path(service, accepted), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %></h5>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-2">
+                  <%= cl_image_tag("#") %>
+                </div>
+                <div class="col-sm-2">
+                  <h4><%= accepted.customer.first_name%></h4>
+                  <small><%= time_ago_in_words(accepted.created_at) + ' ago' %></small>
+                </div>
+                <div class="col-sm-2">
+                  <%= 'university placeholder' %>
+                </div>
+                <div class="col-sm-3">
+                  <p>   <%= accepted.customer.email %></p>
+
+                </div>
+                <div class="col-sm-3">
+                  <h5><%=link_to "Completed", service_booking_completed_path(service, accepted), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %></h5>
+                </div>
               </div>
             </div>
           </div>
