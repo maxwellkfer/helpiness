@@ -11,16 +11,11 @@
 
       <h1><%= @service.name.capitalize %></h1>
 
-        
+
          <form method="post" action="/services/<%= @service.id %>/bookings">
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
           <input value="Book" placeholder="Book" type="submit" name = "booking[status]" />
         </form>
-
-
-        <button type="submit" class="btn btn-info trigger-btn" data-toggle="modal" data-target="#exampleModal" name = "booking[status]">
-          Book
-        </button>
 
         <div class="descript">
           <p><%= @service.description%></p>

@@ -16,7 +16,7 @@
           </div>
           <div class="col-sm-8">
             <h5><%=link_to "Accept", service_booking_accept_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-success" %></h5>
-            <a href='#I<%= booking.id %>' target="_blank/">
+            <a href='dashboard#requests' target="_blank/">
             <h5><%=link_to "Decline", service_booking_decline_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %></h5>
           </div>
         </div>
