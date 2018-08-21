@@ -16,23 +16,24 @@ class MessagesController < ApplicationController
      @messages = @conversation.messages
     end
    if @messages.last
-    if @messages.last.user_id != current_user.id
-     @messages.last.read = true;
-    end
-   end
-  @message = @conversation.messages.new
+      if @messages.last.user_id != current_user.id
+        @messages.last.read = true;
+      end
+    @message = @conversation.messages.new
+  end
    end
 
   def new
-    skip_policy_scope
-   @message = @conversation.messages.new
+    skip_authorization
+    @message = @conversation.messages.new
   end
 
   def create
-   @message = @conversation.messages.new(message_params)
-   skip_policy_scope
-   if @message.save
-    redirect_to conversation_messages_path(@conversation)
+    skip_authorization
+     @message = @conversation.messages.new(message_params)
+     skip_policy_scope
+     if @message.save
+      redirect_to conversation_messages_path(@conversation)
    end
   end
 
