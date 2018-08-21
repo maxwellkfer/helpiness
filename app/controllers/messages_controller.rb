@@ -4,23 +4,23 @@ class MessagesController < ApplicationController
     end
 
   def index
-    skip_policy_scope
     @messages = @conversation.messages
+    skip_policy_scope
     if @messages.length > 10
-     @over_ten = true
-     @messages = @messages[-10..-1]
+      @over_ten = true
+      @messages = @messages[-10..-1]
     end
     if params[:m]
-     @over_ten = false
-     @messages = @conversation.messages
+      @over_ten = false
+      @messages = @conversation.messages
     end
 
-   if @messages.last
+    if @messages.last
       if @messages.last.user_id != current_user.id
         @messages.last.read = true;
       end
+    end
     @message = @conversation.messages.new
-  end
    end
 
 
