@@ -1,6 +1,9 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+
+
+
   end
 
   def accept
@@ -27,6 +30,13 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @booking.declined!
     redirect_to dashboard_path(anchor: "/dashboard#requests")
+  end
+
+  def completed
+    skip_authorization
+    @booking = Booking.find(params[:booking_id])
+    @booking.completed!
+    redirect_to dashboard_path(anchor: "/dashboard#accepted-requests")
   end
 
   def show
@@ -67,11 +77,12 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_path(anchor: "/dashboard#accepted-requests")
   end
 
   private
   def booking_params
     params.require(:booking).permit(:user_id, :service_id)
+
   end
 end
