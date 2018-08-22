@@ -65,7 +65,8 @@
 
 
       <div class="postuser">
-        <p>My name is <%= @service.user.first_name.capitalize %>, I study <%= @service.user.field.downcase %> and I love <%= @service.user.hobby.downcase %>.</p>
+        <p>My name is <%= @service.user.first_name.capitalize %>. </p>
+        <p>I study <%= @service.user.field.downcase %> and love <%= @service.user.hobby.downcase %>.</p>
 
 
         <% unless @service.user.university.nil? %>
@@ -81,11 +82,6 @@
         <div class="review-me">
           <p><i class="far fa-star"></i> <%= link_to " My last reviews", service_reviews_index_path(@service) %></p>
         </div>
-
-
-      <div id="user-reviews">
-        <%=link_to "User Reviews", service_reviews_index_path(@service) %>
-      </div>
 
     </div>
     </div>
