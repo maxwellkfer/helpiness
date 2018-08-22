@@ -17,9 +17,9 @@ NAMES = ["Augusto Menezes", "Antelmo Bandeira", "Dinis Roque", "Vicente Pascoal"
  "Wilbert Orourke", "Mohammad Morales", "Malorie Klapper", "Jeniffer Obrian", "Judy Dejean"]
 DESCRIPTION = [""]
 
-
-["Tutoring", "Activity Partners", "Rideboard & Carpools", "Manual Labor"].each do |category|
-  Category.create({name: category})
+Category.destroy_all
+["Tutoring", "Ride share", "Activity coaching", "Technical help", "Books", "Household items", "Clothes", "Manual Labor"].each do |category|
+  Category.create!({name: category})
 end
 
 

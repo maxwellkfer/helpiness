@@ -77,6 +77,11 @@
         <%end%>
 
       </div>
+        <br>
+        <div class="review-me">
+          <p><i class="far fa-star"></i> <%= link_to " My last reviews", service_reviews_index_path(@service) %></p>
+        </div>
+
 
       <div id="user-reviews">
         <%=link_to "User Reviews", service_reviews_index_path(@service) %>
