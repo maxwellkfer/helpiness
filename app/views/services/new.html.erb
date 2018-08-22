@@ -7,8 +7,6 @@
     <%= simple_form_for @service do |f| %>
       <%= f.input :name, label: "Offer name", maxlength: 15 %>
 
-      <%= f.input :name, label: "Name of your service", maxlength: 15 %>
-
       <%= f.input :helpies, label: "How many helpies?" %>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>

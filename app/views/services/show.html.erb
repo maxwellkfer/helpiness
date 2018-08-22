@@ -18,45 +18,40 @@
 
         </div>
         <br><br>
-
+      <div class="white-back-about">
         <h3>About my service</h3>
         <br>
         <div class="descript">
           <p><%= @service.description%></p>
         </div>
       </div>
+      </div>
     </div>
-
-
-
-
-
-
-
-
-
 
     <div class="col-xs-12 col-sm-4">
 
-        <div class="show-card">
-          <div class="show-message">
-            <%  %>
+          <div class="show-card">
             <% if current_user != @service.user %>
-            <%= link_to 'Write me', conversations_path(sender_id: current_user.id, recipient_id: @service.user.id), method: 'post', class: "btn btn-info" %>
+            <%= link_to 'Write me', conversations_path(sender_id: current_user.id, recipient_id: @service.user.id), method: 'post', class: "btn btn-info show-message" %>
             <% end %>
           </div>
+
           <div class="show-request">
             <% if current_user != @service.user %>
               <form method="post" action="/services/<%= @service.id %>/bookings">
                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                <input value="Request" class="btn btn-info trigger-btn" placeholder="Book" type="submit" name = "booking[status]" />
+                <input value="Request" class="btn btn-info trigger-btn show-request" placeholder="Book" type="submit" name = "booking[status]" />
               </form>
             <% end %>
           </div>
+
+          <div class="white-back-about-me">
+
+
           <div class="show-avatar">
-            <div class="profile-avatar img-circle">
-              <% if current_user.avatar? %>
-                <%= image_tag current_user.avatar.url(:show_face), class: "img-circle" %>
+            <div class=" img-circle">
+              <% if @service.user.avatar? %>
+                <%= image_tag @service.user.avatar.url(:show_face), class: "img-circle" %>
               <% else %>
                 <%= image_tag "helpster.png", class: "profile-hipster"%>
               <%end%>
@@ -64,20 +59,27 @@
           </div>
           <div class="show-about">
             <h3>About me</h3>
+            <br>
           </div>
-        </div>
+
 
 
       <div class="postuser">
         <p>My name is <%= @service.user.first_name.capitalize %>, I study <%= @service.user.field.downcase %> and I love <%= @service.user.hobby.downcase %>.</p>
-        <% unless current_user.university.nil? %>
-          <p>I am a student at <%= current_user.university.name %>.</p>
+
+
+        <% unless @service.user.university.nil? %>
+          <p>I am a student at <%= @service.user.university.name %>.</p>
         <%end%>
-          <p>So far, I've helped <%= current_user.services.count %>
-        <% unless current_user.services.count == 1 %>people !
+          <p>I have <%= @service.user.helpies %> Helpies and I've helped sor far <%= @service.user.services.count %>
+        <% unless @service.user.services.count == 1 %>people !
         <% else %>person !</p>
         <%end%>
+
       </div>
+
+    </div>
+    </div>
 
     </div>
   </div>

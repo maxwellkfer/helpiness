@@ -1,3 +1,23 @@
+.white-back-about h3 {
+  color: #f9cb5a;
+}
+
+.white-back-about-me {
+  box-shadow: 3px 3px 10px #c8c8c8;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 40px;
+  padding-top: 20px;
+}
+
+.white-back-about {
+  box-shadow: 3px 3px 10px #c8c8c8;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 50px;
+  padding-top: 20px;
+}
+
 .img-circle {
   border-radius: 50%;
 }
@@ -30,14 +50,14 @@
   align-items: center;
   flex-direction: column;
   width: 330px;
-  height: 250px;
+  height: 168px;
   margin: 20px auto;
   }
 
 .show-request {
   position: absolute;
-  top: 40px;
-  left: 10px;
+  top: 30px;
+  left: 25px;
 }
 
 .show-message {
@@ -48,14 +68,11 @@
 
 .show-avatar {
   position: absolute;
-  top: 120px;
-  left: 160px;
+  top: 228px;
+  left: 270px;
 }
 
 .show-about h3 {
-  position: absolute;
-  top: 180px;
-  left: 0px;
   color: #f9cb5a;
 }
 
@@ -246,7 +263,6 @@
 
 .postuser {
   text-align: justify;
-  margin: 20px;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
