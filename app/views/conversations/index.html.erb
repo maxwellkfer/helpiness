@@ -24,21 +24,36 @@
             <% else %>
               <% recipient = User.find(conversation.sender_id) %>
             <% end %>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <%= link_to recipient.first_name,   conversation_messages_path(conversation)%>
-                </div>
-                <div class="col-md-6">
-                  <%= time_ago_in_words(conversation.created_at) + ' ago' %>
-                </div>
-              </div>
-            </div>
             <%#if conversation.messages.last.body.length > 20&%>
               <p> <%#= conversation.messages.last.body[0..20] + "..."%></p>
             <%#else%>
               <p><%#= conversation.messages.last.body%></p>
             <%#end%>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <% unless current_user %>
+                    <% if conversation.recipient.avatar? %>
+                      <%= image_tag conversation.recipient.avatar.url(:show_face), class: "img-circle" %>
+                    <% else %>
+                      <%= image_tag "helpster.png", class: "profile-hipster"%>
+                    <%end%>
+                  <% else %>
+                    <% if conversation.sender.avatar? %>
+                      <%= image_tag conversation.sender.avatar.url(:show_face), class: "img-circle" %>
+                    <% else %>
+                      <%= image_tag "helpster.png", class: "profile-hipster"%>
+                    <%end%>
+                  <% end %>
+                </div>
+                <div class="col-md-4">
+                  <%= link_to recipient.first_name,   conversation_messages_path(conversation)%>
+                </div>
+                <div class="col-md-4">
+                  <%= time_ago_in_words(conversation.created_at) + ' ago' %>
+                </div>
+              </div>
+            </div>
             <% end %>
           <% end %>
        <% end %>
