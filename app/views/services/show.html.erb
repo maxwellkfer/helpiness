@@ -50,8 +50,8 @@
 
           <div class="show-avatar">
             <div class=" img-circle">
-              <% if current_user.avatar? %>
-                <%= image_tag current_user.avatar.url(:show_face), class: "img-circle" %>
+              <% if @service.user.avatar? %>
+                <%= image_tag @service.user.avatar.url(:show_face), class: "img-circle" %>
               <% else %>
                 <%= image_tag "helpster.png", class: "profile-hipster"%>
               <%end%>
