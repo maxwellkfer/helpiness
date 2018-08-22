@@ -68,11 +68,11 @@
         <p>My name is <%= @service.user.first_name.capitalize %>, I study <%= @service.user.field.downcase %> and I love <%= @service.user.hobby.downcase %>.</p>
 
 
-        <% unless current_user.university.nil? %>
-          <p>I am a student at <%= current_user.university.name %>.</p>
+        <% unless @service.user.university.nil? %>
+          <p>I am a student at <%= @service.user.university.name %>.</p>
         <%end%>
-          <p>So far, I've helped <%= current_user.services.count %>
-        <% unless current_user.services.count == 1 %>people !
+          <p>I have <%= @service.user.helpies %> Helpies and I've helped sor far <%= @service.user.services.count %>
+        <% unless @service.user.services.count == 1 %>people !
         <% else %>person !</p>
         <%end%>
 
