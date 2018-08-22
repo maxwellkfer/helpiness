@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
        @user.save
       end
     end
-    redirect_to(dashboard_path(anchor: 'requests')) and return
+    redirect_to(dashboard_path(anchor: 'requests'))
   end
 
 
