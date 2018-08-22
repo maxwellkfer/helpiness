@@ -149,9 +149,9 @@
 
 .card-category {
   position: absolute;
-  bottom: 115px;
-  left: 20px;
-  font-size: 10px;
+  bottom: 110px;
+  left: 16px;
+  font-size: 13px;
   text-transform: uppercase;
   color: grey;
 }
@@ -160,17 +160,15 @@
   position: absolute;
   margin: 0px 8px;
   font-size: 9px;
-  bottom: 60px;
-  left: 40px;
-  padding-right: 20px;
+  bottom: 70px;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   color: grey;
 }
 
 .card-helpies {
   position: absolute;
-  bottom: 115px;
+  bottom: 110px;
   right: 20px;
   font-size: 15px;
   text-transform: uppercase;
@@ -179,11 +177,11 @@
 
 .card-name {
   position: absolute;
-  bottom: 10px;
-  right: 15px;
+  bottom: 15px;
+  right: 20px;
   color: #f9cb5a;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .card-link:hover {
