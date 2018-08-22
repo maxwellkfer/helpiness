@@ -1,0 +1,5 @@
+meta_product_name: "Helpiness"
+meta_title: "Helpiness - Find help for help"
+meta_description: "With Helpiness, use any services withour money!"
+meta_image: "cover.jpg"                       # should exist in `app/assets/images/`
+

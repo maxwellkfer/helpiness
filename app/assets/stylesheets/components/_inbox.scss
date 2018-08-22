@@ -1,9 +1,10 @@
 .inbox-head {
-  background: #f2c94c;
-  border-radius: 0 4px 0 0;
-  color: #fff;
-  min-height: 80px;
+  box-shadow: 3px 3px 10px #c8c8c8;
+  border-radius: 10px;
+  background: #fafafa;
   padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .sr-btn {
@@ -15,3 +16,15 @@
   padding: 0 20px;
 }
 
+.input-append {
+  margin-top: 30px;
+}
+
+.inbox-content {
+  box-shadow: 3px 3px 10px #c8c8c8;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

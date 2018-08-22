@@ -2,7 +2,7 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["Services for Helpies,", "Helpies for services !"],
+    strings: ["Be helped for free,", "pay with Helpies !"],
     typeSpeed: 80,
     loop: true
   });

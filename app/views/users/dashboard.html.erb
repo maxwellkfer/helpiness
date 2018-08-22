@@ -16,13 +16,13 @@
 
       <li class="nav-item">
         <a class="nav-link" id="requests-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="requests" aria-selected="false">
-          Request
+          Requests
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" id="accepted-requests-tab" data-toggle="tab" href="#accepted-requests" role="tab" aria-controls="accepted-requests" aria-selected="false">
-          Accepted-Request
+          Open Requests
         </a>
       </li>
 
@@ -45,7 +45,7 @@
           </div>
 
           <div class="profile-text">
-            <p>My name is <%= current_user.first_name.capitalize %>, I study <%= current_user.field.downcase %> and I love <%= current_user.hobby.downcase %>.</p>
+            <p>My name is <%= current_user.first_name.capitalize %>. I study <%= current_user.field.downcase %> and I love <%= current_user.hobby.downcase %>.</p>
             <% unless current_user.university.nil? %>
               <p>I am a student at <%= current_user.university.name %>.</p>
             <%end%>
