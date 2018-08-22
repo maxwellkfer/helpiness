@@ -32,19 +32,20 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-4">
-                  <% unless current_user %>
-                    <% if conversation.recipient.avatar? %>
-                      <%= image_tag conversation.recipient.avatar.url(:show_face), class: "img-circle" %>
+                    <%  %>
+                    <% if current_user == conversation.recipient %>
+                      <% if conversation.sender.avatar? %>
+                        <%= image_tag conversation.sender.avatar.url(:show_face), class: "img-circle" %>
+                      <% else %>
+                        <%= image_tag "helpster.png", class: "profile-hipster"%>
+                      <%end%>
                     <% else %>
-                      <%= image_tag "helpster.png", class: "profile-hipster"%>
-                    <%end%>
-                  <% else %>
-                    <% if conversation.sender.avatar? %>
-                      <%= image_tag conversation.sender.avatar.url(:show_face), class: "img-circle" %>
-                    <% else %>
-                      <%= image_tag "helpster.png", class: "profile-hipster"%>
-                    <%end%>
-                  <% end %>
+                      <% if conversation.recipient.avatar? %>
+                        <%= image_tag conversation.recipient.avatar.url(:show_face), class: "img-circle" %>
+                      <% else %>
+                        <%= image_tag "helpster.png", class: "profile-hipster"%>
+                      <%end%>
+                    <% end %>
                 </div>
                 <div class="col-md-4">
                   <%= link_to recipient.first_name,   conversation_messages_path(conversation)%>
