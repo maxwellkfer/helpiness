@@ -14,11 +14,15 @@
      <% @messages.each do |message| %>
       <% if message.body %>
         <% user = User.find(message.user_id) %>
-          <div class="item">
+          <div class="item message-indiv">
             <div class="content">
               <div class="header">
-                <h2><%= user.first_name %></h2>
-                <%= message.message_time %>
+                <div class="padding align-right">
+                  <%= message.message_time %>
+                </div>
+                <div class="yellow">
+                  <h4><%= user.first_name %> wrote :</h4>
+                </div>
               </div>
               <div class="list">
                 <div class="item">
