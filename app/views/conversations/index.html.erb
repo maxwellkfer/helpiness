@@ -1,7 +1,9 @@
 <div class="container">
   <div class="inbox-head row">
     <div class="col-md-6">
-      <h3>Mailbox</h3>
+      <div class="align-left">
+        <h1>Mailbox</h1>
+      </div>
     </div>
     <div class="col-md-6">
       <form class="text-right" action="#">
@@ -12,7 +14,6 @@
       </form>
     </div>
   </div>
-  <div class="container">
    <div class="ui list">
     <div class="item">
      <% @conversations.each do |conversation| %>
@@ -29,7 +30,7 @@
             <%#else%>
               <p><%#= conversation.messages.last.body%></p>
             <%#end%>
-            <div class="container">
+            <div class="inbox-content">
               <div class="row">
                 <div class="col-md-4">
                   <% unless current_user %>
@@ -59,7 +60,6 @@
        <% end %>
       </div>
     </div>
-  </div>
 </div>
 
 
