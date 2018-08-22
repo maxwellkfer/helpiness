@@ -71,15 +71,15 @@
         <% unless @service.user.university.nil? %>
           <p>I am a student at <%= @service.user.university.name %>.</p>
         <%end%>
-          <p>I have <%= @service.user.helpies %> Helpies and I've helped sor far <%= @service.user.services.count %>
+          <p>I have <%= @service.user.helpies %> Helpies and so far I've helped <%= @service.user.services.count %>
         <% unless @service.user.services.count == 1 %>people !
         <% else %>person !</p>
         <%end%>
 
       </div>
 
-      <div>
-        <%= link_to "User Reviews", service_reviews_index_path(@service) %>
+      <div id="user-reviews">
+        <%=link_to "User Reviews", service_reviews_index_path(@service) %>
       </div>
 
     </div>
