@@ -15,15 +15,12 @@ Rails.application.routes.draw do
       patch "/accept", to: "bookings#accept"
       patch "/decline", to: "bookings#decline"
       patch "/completed", to: "bookings#completed"
+      resources :reviews, only: [:new, :create]
     end
+    get "index", to: "reviews#index", as: "reviews_index"
   end
 
-
   resources :categories
-
-  resources :bookings, only: [:destroy]
-
-
 
   get "dashboard", to: 'users#dashboard', as: 'dashboard'
 

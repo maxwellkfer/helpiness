@@ -6,6 +6,7 @@
   has_many :skills
   has_many :services
   has_many :bookings
+  has_many :reviews
 
   belongs_to :university, optional: true
 

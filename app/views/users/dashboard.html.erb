@@ -25,6 +25,12 @@
           Accepted-Request
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" id="myBookings-tab" data-toggle="tab" href="#myBookings" role="tab" aria-controls="myBookings" aria-selected="false">
+          My-Bookings
+        </a>
+      </li>
     </ul>
 
 
@@ -90,6 +96,10 @@
         <% else %>
           <p>You have no request</p>
         <%end%>
+      </div>
+
+      <div class="tab-pane fade" id="myBookings" role="tabpanel" aria-labelledby="myBookings-tab">
+        <%= render 'my_bookings'%>
       </div>
     </div>
   </div>

@@ -1,0 +1,24 @@
+<div class="cards">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+        <% Booking.where(user_id: current_user.id).each do |booking| %>
+          <div class="test">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <%= cl_image_tag("#") %>
+                </div>
+                <div class="col-sm-4">
+                  <h4><%= booking.service.user.first_name%></h4>
+                  <small><%= time_ago_in_words(booking.created_at) + ' ago' %></small>
+                </div>
+                <div class="col-sm-4">
+                  <%= link_to "Write a Review", new_service_booking_review_path(booking.service, booking)%>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>
