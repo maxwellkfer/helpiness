@@ -4,8 +4,11 @@
     <% if @over_ten %>
       <%= link_to 'Show Previous', '?m=all' %>
     <% end %>
-
-    <h1>Writting to <%= @conversation.recipient.first_name %></h1>
+    <% if current_user == @conversation.recipient %>
+      <h1>Writting to <%= @conversation.sender.first_name %></h1>
+    <% else %>
+  <h1>Writting to <%= @conversation.recipient.first_name %></h1>
+    <% end %>
 
     <div class="ui segment">
      <% @messages.each do |message| %>
