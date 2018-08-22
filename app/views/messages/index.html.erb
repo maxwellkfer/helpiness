@@ -5,9 +5,9 @@
       <%= link_to 'Show Previous', '?m=all' %>
     <% end %>
     <% if current_user == @conversation.recipient %>
-      <h1>Writting to <%= @conversation.sender.first_name %></h1>
+      <h1>Writing to <%= @conversation.sender.first_name %></h1>
     <% else %>
-  <h1>Writting to <%= @conversation.recipient.first_name %></h1>
+  <h1>Writing to <%= @conversation.recipient.first_name %></h1>
     <% end %>
 
     <div class="ui segment">
