@@ -1,8 +1,9 @@
+<div class="container" col-xs-12>
 <% if @over_ten %>
 
 <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
-<p>Writting to <%= @conversation.recipient.first_name %><p>
+<p>Writing to <%= @conversation.recipient.first_name %><p>
 
 <div class="ui segment">
  <% @messages.each do |message| %>
@@ -31,4 +32,5 @@
  <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
 </div>
 <% end %>
+</div>
 
