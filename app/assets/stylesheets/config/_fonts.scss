@@ -2,10 +2,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 @import url("https://fonts.googleapis.com/css?family=Palanquin+Dark");
 @import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 // Define fonts for body and headers
-$body-font: "Palanquin Dark", "Helvetica", "sans-serif";
-$headers-font: "Palanquin Dark", "Helvetica", "sans-serif";
+$body-font: "Quicksand", "Helvetica", "sans-serif";
+$headers-font: "Quicksand", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -19,12 +20,16 @@ $headers-font: "Palanquin Dark", "Helvetica", "sans-serif";
 
 .container h1 {
   text-align: center;
-  font-family: 'Righteous', cursive;
+  font-family: 'Quicksand', sans-serif;
   color: #f9cb5a;
 }
 
 h1 {
   text-align: center;
-  font-family: 'Righteous', cursive;
+  font-family: 'Quicksand', sans-serif;
   color: #f9cb5a;
+}
+
+p {
+  line-height: 180%;
 }
