@@ -15,12 +15,13 @@
             <%= time_ago_in_words(booking.created_at) + ' ago' %>
           </div>
 
-          <div class="container">
-            <div class="col-sm-8">
+
+            <div class="col-sm-4">
               <h5><%=link_to "Accept", service_booking_accept_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-success", :style=>"width: 83px" %></h5>
+            </div>
+            <div class="col-sm-4">
               <h5><%=link_to "Decline", service_booking_decline_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-danger", :style=>"width: 83px" %></h5>
 
-            </div>
           </div>
         </div>
       </div>
