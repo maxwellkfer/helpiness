@@ -80,7 +80,13 @@
       </div>
         <br>
         <div class="review-me">
-          <p><i class="far fa-star"></i> <%= link_to " My last reviews", service_reviews_index_path(@service) %></p>
+          <p><i class="glyphicon glyphicon-star"></i> <%= link_to " My last reviews", service_reviews_index_path(@service) %></p>
+        </div>
+        <br>
+        <div>
+          <% @service.user.rating.to_i.times do %>
+            <span class="review-me far fa-star"></span>
+          <% end %>
         </div>
 
     </div>
