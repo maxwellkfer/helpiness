@@ -1,36 +1,39 @@
-<div class="cards">
-  <% @services.each do |service| %>
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
-      <% unless service.bookings.where(status: :pending).empty? %>
-      <h2><%= service.name %></h2>
-      <% end %>
-      <% Booking.where(service: service, status: "pending").each do |booking| %>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-2">
-            <h4><%= booking.customer.first_name%></h4>
+<% @services.each do |service| %>
+  <% unless service.bookings.where(status: :pending).empty? %>
+    <h2><%= service.name %></h2>
+  <% end %>
+
+  <div class="flex-container">
+    <% Booking.where(service: service, status: "pending").each do |booking| %>
+
+      <div class="flex item">
+        <div class="flex-container2 post-indiv">
+
+          <div class="flex item">
+            <h4><%= booking.customer.first_name.capitalize%></h4>
           </div>
-          <div class="col-sm-2", style="padding-top: 13px;">
+
+          <div class="flex item">
             <%= time_ago_in_words(booking.created_at) + ' ago' %>
           </div>
 
+          <div class="flex-container3">
 
-            <div class="col-sm-4">
+            <div class="flex item">
               <h5><%=link_to "Accept", service_booking_accept_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-success", :style=>"width: 83px" %></h5>
             </div>
-            <div class="col-sm-4">
+
+            <div class="flex item">
               <h5><%=link_to "Decline", service_booking_decline_path(service, booking), method: "patch", data: { no_turbolink: true }, data: {confirm: 'Are you sure?'}, class: "btn btn-danger", :style=>"width: 83px" %></h5>
+            </div>
 
           </div>
+
         </div>
       </div>
+    <% end %>
+  </div>
 
-        <% end %>
-
-      </div>
-    </div>
-  <% end %>
+<% end %>
 
 
-</div>

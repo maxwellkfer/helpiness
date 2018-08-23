@@ -1,9 +1,14 @@
 
 <div class="show-banner" style="background-image: url('<%= @service.photo_or_default %>')">
-            <!-- <div class="show-banner-price">
-              <h3><%= @service.helpies %> <i class="far fa-hand-paper"></i></h3>
-            </div> -->
-          </div>
+
+</div>
+
+  <div class="col-xs-12 col-sm-8" >
+    <% if @service.user == current_user %>
+      <%= link_to "Edit", edit_service_path(@service), class: "btn btn-success" %>
+      <%= link_to "Delete", service_path, method: :delete, class: "btn btn-danger" %>
+    <% end %>
+  </div>
 
 <div class="container">
   <div class="row">
@@ -83,6 +88,7 @@
           <p><i class="glyphicon glyphicon-star"></i> <%= link_to " My last reviews", service_reviews_index_path(@service) %></p>
         </div>
         <br>
+
         <div>
           <% @service.user.rating.to_i.times do %>
             <span class="review-me far fa-star"></span>

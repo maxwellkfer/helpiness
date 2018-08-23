@@ -1,5 +1,11 @@
-<%= simple_form_for([@service, @booking, @review ]) do |form| %>
-  <%= form.input :comments, as: :text %>
-  <%= form.input :stars, as: :integer %>
-  <%= form.button :submit %>
-<% end %>
+<div class="container">
+  <br><br>
+  <h1>Write a review :</h1>
+  <div class="post-indiv2">
+    <%= simple_form_for([@service, @booking, @review ]) do |form| %>
+      <%= form.input :comments, as: :text %>
+      <%= form.input :stars, as: :integer %>
+      <%= form.button :submit, class: "btn btn-info" %>
+    <% end %>
+  </div>
+</div>

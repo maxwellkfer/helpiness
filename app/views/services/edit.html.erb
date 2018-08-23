@@ -1,2 +1,26 @@
-<h1>Services#edit</h1>
-<p>Find me in app/views/services/edit.html.erb</p>
+<div class="container">
+  <div class="col-sm-offset-2 col-sm-8">
+    <div class="margin-kill">
+    <h1>Edit your offer</h1>
+    </div>
+    <br>
+    <br>
+    <div class="post-indiv">
+    <div class="offer-form">
+    <%= simple_form_for @service do |f| %>
+      <%= f.input :name, label: "Offer name", maxlength: 15, default: @service.name%>
+
+      <%= f.input :helpies, label: "How many helpies?", default: @service.helpies %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :description, label: "Tell me more...", default: @service.description %>
+      <%= f.association :category, label: "Choose a category for your offer", default: @service.category %>
+
+    </div>
+      <div class="form-button">
+      <%= f.submit "Post it!", class: "btn btn-info" %>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
