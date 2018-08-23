@@ -1,7 +1,7 @@
 
 
 <div class="container">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-11">
     <br>
     <h1>Edit your profile</h1>
 
@@ -14,10 +14,11 @@
         <%= f.input :first_name, label: "First name :" %>
         <%= f.input :last_name, label: "Last name :" %>
 
-        <%= f.input :avatar %>
+        <%= f.input :avatar, label: "Upload your photo :" %>
 
         <%= f.input :field, label: "What do you study ?" %>
         <%= f.input :hobby, label: "What are your hobbies and activities you practice ?" %>
+        <p>What is your university ?</p>
         <%= f.collection_select(:university_id, University.all, :id, :name,
     {}, class: "select2") %>
 
