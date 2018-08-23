@@ -83,6 +83,7 @@
           <p><i class="glyphicon glyphicon-star"></i> <%= link_to " My last reviews", service_reviews_index_path(@service) %></p>
         </div>
         <br>
+
         <div>
           <% @service.user.rating.to_i.times do %>
             <span class="review-me far fa-star"></span>

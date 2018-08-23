@@ -6,28 +6,35 @@
      <div class="flex-container">
       <% user = User.find(Booking.find(review.booking_id).user_id) %>
       <div class="flex-container6 post-indiv">
-        <div class="flex item">
-          <% if user.avatar? %>
-            <%= image_tag user.avatar.url(:show_face), class: "img-circle" %>
-          <% else %>
-            <%= image_tag "helpster.png", class: "profile-hipster"%>
-          <%end%>
+        <div class="flex-container3">
+          <div class="flex item">
+            <% if user.avatar? %>
+              <%= image_tag user.avatar.url(:show_face), class: "img-circle" %>
+            <% else %>
+              <%= image_tag "helpster.png", class: "profile-hipster"%>
+            <%end%>
+          </div>
+          <div class="flex item hoop">
+            <h2><%= User.find(Booking.find(review.booking_id).user_id).first_name%></h2>
+            <small><%= time_ago_in_words(review.created_at) + ' ago' %></small>
+          </div>
+          <div class="flex item hoop">
+            <% @service.user.rating.to_i.times do %>
+              <span class="review-me far fa-star"></span>
+            <% end %>
+          </div>
         </div>
-        <div class="flex item">
-          <h2><%= User.find(Booking.find(review.booking_id).user_id).first_name%></h2>
-          <small><%= time_ago_in_words(review.created_at) + ' ago' %></small>
-        </div>
-        <div class="flex item">
-          <h2><%= review.comments %></h2>
-        </div>
+          <div class="flex item">
+            <p><%= review.comments %></p>
+          </div>
       </div>
     <% end %>
   </div>
   </div>
 
-<% else %>
-<h1><%= @service.user.first_name %> has no reviews</h1>
-<% end %>
+  <% else %>
+  <h1><%= @service.user.first_name %> has no reviews</h1>
+  <% end %>
 </div>
 
 
