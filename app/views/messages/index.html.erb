@@ -46,8 +46,10 @@
       <br>
       <div>
         <%= f.submit "Send", class: "ui blue labeled submit icon button btn btn-info" %>
+        <%= link_to 'Back', session[:return_to], class: "ui blue labeled submit icon button btn btn-info" %>
       </div>
     <% end %>
+
 
   </div>
 </div>
