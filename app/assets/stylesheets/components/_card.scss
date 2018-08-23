@@ -1,3 +1,9 @@
+.flex-container6 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .post-indiv2 {
   box-shadow: 3px 3px 50px #e6e4e7;
   background: #fafafa;
@@ -16,7 +22,11 @@
 
 .img-radius {
   border-radius: 5px;
-}
+  }
+
+.hoop {
+    margin-left: 100px;
+  }
 
 .flex .item h5 {
     margin-right: 20px;
