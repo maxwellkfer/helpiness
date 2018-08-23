@@ -1,7 +1,26 @@
-.flexbox {
+.img-radius {
+  border-radius: 5px;
+}
+
+.flex .item h5 {
+    margin-right: 20px;
+  }
+
+.flex-container3 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+.flex-container2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-container {
+ display: flex;
+  flex-direction: column;
 }
 
 .margin-kill h1 {
