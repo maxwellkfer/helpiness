@@ -2,7 +2,7 @@
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :avatar, AvatarUploader
-
+  after_create :send_welcome_email
   has_many :skills
   has_many :services
   has_many :bookings
@@ -26,5 +26,9 @@ before_save :default_values
       "helpster-mini.png"
     end
   end
+private
 
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 end
