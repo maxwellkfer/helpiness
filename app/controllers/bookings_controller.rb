@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
        @user.save
       end
     end
-    redirect_to(dashboard_path(anchor: 'requests'))
+    redirect_to dashboard_path(anchor: 'requests')
   end
 
 
@@ -26,14 +26,14 @@ class BookingsController < ApplicationController
     skip_authorization
     @booking = Booking.find(params[:booking_id])
     @booking.declined!
-    redirect_to dashboard_path(anchor: "/dashboard#requests")
+    redirect_to dashboard_path(anchor: 'requests')
   end
 
   def completed
     skip_authorization
     @booking = Booking.find(params[:booking_id])
     @booking.completed!
-    redirect_to dashboard_path(anchor: "/dashboard#accepted-requests")
+    redirect_to dashboard_path(anchor: 'accepted-requests')
   end
 
   def show
