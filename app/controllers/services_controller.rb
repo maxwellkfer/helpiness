@@ -14,12 +14,16 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    if Review.all.where(service_owner: @service.user).any?
     sum = 0
     Review.all.where(service_owner: @service.user).each do |review|
       sum = sum + review.stars
     end
     count = Review.all.where(service_owner: @service.user).count
     @service.user.rating = (sum/count)
+  else
+    @service.user.rating = 0
+  end
     authorize @service
     @review = Review.new
   end
