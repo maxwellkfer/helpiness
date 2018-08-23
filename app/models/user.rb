@@ -23,7 +23,7 @@ before_save :default_values
     if avatar_url
       avatar_url
     else
-      "https://pbs.twimg.com/profile_images/415011885646639104/KoviHCMP.jpeg"
+      "helpster-mini.png"
     end
   end
 

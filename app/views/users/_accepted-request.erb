@@ -10,15 +10,13 @@
             <div class="container">
               <div class="row">
                 <div class="col-sm-2">
-                  <%= cl_image_tag("#") %>
+                  <%= cl_image_tag(accepted.service.photo_url, width: 100, height: 75, crop: :fill, class: "card-img") %>
                 </div>
                 <div class="col-sm-2">
                   <h4><%= accepted.customer.first_name%></h4>
                   <small><%= time_ago_in_words(accepted.created_at) + ' ago' %></small>
                 </div>
-                <div class="col-sm-2">
-                  <%= 'university placeholder' %>
-                </div>
+
                 <div class="col-sm-3">
                   <p>   <%= accepted.customer.email %></p>
 
