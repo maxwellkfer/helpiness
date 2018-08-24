@@ -36,6 +36,7 @@ class MessagesController < ApplicationController
      skip_policy_scope
      if @message.save
       redirect_to conversation_messages_path(@conversation)
+      #redirect_to session[:return_to]
    end
   end
 

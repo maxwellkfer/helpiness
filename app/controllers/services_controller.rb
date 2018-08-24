@@ -21,11 +21,12 @@ class ServicesController < ApplicationController
     end
     count = Review.all.where(service_owner: @service.user).count
     @service.user.rating = (sum/count)
-  else
-    @service.user.rating = 0
-  end
+    else
+      @service.user.rating = 0
+    end
     authorize @service
     @review = Review.new
+    session[:return_to] = request.fullpath
   end
 
   def new

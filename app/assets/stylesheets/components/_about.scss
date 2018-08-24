@@ -1,29 +1,14 @@
-.team-block [class*="col-"] {
-    padding-bottom: 15px;
-    padding-top: 15px;
+.about-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  transition: width 2s;
 }
 
-.team-block .section-number-wrap {
-    padding: 0 10px;
-    text-align: left;
+.about-pic:hover {
+  width: 300px;
 }
 
-.team-block {
-    padding-bottom: 90px;
-    padding-top: 60px;
-}
-.has-number {
-    position: relative;
-}
-.bg-gray {
-    background: #f8f8f8;
-}
 
-.team-block [class*="col-"] {
-    padding-bottom: 15px;
-    padding-top: 15px;
-}
 
-.has-number [class*="col-"] {
-    position: static;
-}
+

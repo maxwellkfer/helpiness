@@ -5,6 +5,7 @@ class ConversationsController < ApplicationController
     skip_policy_scope
    @users = User.all
    @conversations = Conversation.all
+    session[:return_to] = request.fullpath
    end
 
   def create

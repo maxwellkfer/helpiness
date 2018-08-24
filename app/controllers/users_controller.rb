@@ -15,10 +15,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def about
-    skip_authorization
-  end
-
   def index
     skip_policy_scope
     @users = User.all
