@@ -10,20 +10,24 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Create", new_service_path, class: "navbar-helpiness-item navbar-helpiness-link" %>
-      <%= link_to "Services", services_path, class: "navbar-helpiness-item navbar-helpiness-link" %>
-      <%= link_to "Messages", conversations_path, class: "navbar-helpiness-item navbar-helpiness-link" %>
+      <%= link_to(new_service_path, class: "navbar-helpiness-item navbar-helpiness-link") do %>
+        <i class="far fa-share-square"></i> Post
+        <% end %>
+      <%= link_to(services_path, class: "navbar-helpiness-item navbar-helpiness-link") do %>
+        <i class="fas fa-search"></i> Services
+        <% end %>
+      <%= link_to(dashboard_path, class: "navbar-helpiness-item navbar-helpiness-link") do %>
+        <i class="fas fa-user"></i> Dashboard
+        <% end %>
+      <%= link_to(conversations_path, class: "navbar-helpiness-item navbar-helpiness-link") do %>
+        <i class="far fa-envelope"></i> Messages
+        <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-helpiness-item">
         <div class="dropdown">
           <%= image_tag current_user.avatar_or_default, class: "avatar dropdown-toggle", id: "navbar-helpiness-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-helpiness-dropdown-menu">
-            <li>
-              <%= link_to dashboard_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
             <li>
               <%= link_to edit_user_registration_path do %>
                 <i class="fas fa-edit"></i> <%= t(".profile", default: "Edit profile") %>
@@ -53,10 +57,12 @@
 
         <% if user_signed_in? %>
 
-
-          <li><%= link_to "Create", new_service_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
+          <li><%= link_to "Post", new_service_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
           <li><%= link_to "Services", services_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
+          <li><%= link_to "Dashboard", dashboard_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
           <li><%= link_to "Messages", conversations_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
+          <li><%= link_to "Edit profile", edit_user_registration_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, class: "navbar-helpiness-item navbar-helpiness-link" %></li>
 
         <% else %>
 
