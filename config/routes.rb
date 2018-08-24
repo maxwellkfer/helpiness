@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :categories
 
   get "dashboard", to: 'users#dashboard', as: 'dashboard'
-  get "about", to: 'users#about', as: 'about'
+  get "us", to: 'pages#about', as: 'us'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
